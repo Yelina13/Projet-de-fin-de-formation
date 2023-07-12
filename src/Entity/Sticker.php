@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\StickerRepository;
+use App\Entity\StickerItem;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -20,7 +21,7 @@ class Sticker
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="stickers")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="stickers")
      */
     private $craft;
 
@@ -44,12 +45,12 @@ class Sticker
         return $this->id;
     }
 
-    public function getCraft(): ?user
+    public function getCraft(): ?User
     {
         return $this->craft;
     }
 
-    public function setCraft(?user $craft): self
+    public function setCraft(?User $craft): self
     {
         $this->craft = $craft;
 

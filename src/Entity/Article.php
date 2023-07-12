@@ -43,7 +43,7 @@ class Article
     private $is_from;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="articles")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="articles")
      */
     private $publish;
 
@@ -112,12 +112,12 @@ class Article
         return $this;
     }
 
-    public function getPublish(): ?user
+    public function getPublish(): ?User
     {
         return $this->publish;
     }
 
-    public function setPublish(?user $publish): self
+    public function setPublish(?User $publish): self
     {
         $this->publish = $publish;
 
