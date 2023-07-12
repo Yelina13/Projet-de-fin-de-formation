@@ -47,7 +47,7 @@ class StickerItemController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_sticker_item_show", methods={"GET"})
+     * @Route("/{id<\d+>}", name="app_sticker_item_show", methods={"GET"})
      */
     public function show(StickerItem $stickerItem): Response
     {
@@ -57,7 +57,7 @@ class StickerItemController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_sticker_item_edit", methods={"GET", "POST"})
+     * @Route("/{id<\d+>}/edit", name="app_sticker_item_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, StickerItem $stickerItem, StickerItemRepository $stickerItemRepository): Response
     {
@@ -77,7 +77,7 @@ class StickerItemController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_sticker_item_delete", methods={"POST"})
+     * @Route("/{id<\d+>}", name="app_sticker_item_delete", methods={"POST"})
      */
     public function delete(Request $request, StickerItem $stickerItem, StickerItemRepository $stickerItemRepository): Response
     {

@@ -47,7 +47,7 @@ class TodolistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_todolist_show", methods={"GET"})
+     * @Route("/{id<\d+>}", name="app_todolist_show", methods={"GET"})
      */
     public function show(Todolist $todolist): Response
     {
@@ -57,7 +57,7 @@ class TodolistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="app_todolist_edit", methods={"GET", "POST"})
+     * @Route("/{id<\d+>}/edit", name="app_todolist_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Todolist $todolist, TodolistRepository $todolistRepository): Response
     {
@@ -77,7 +77,7 @@ class TodolistController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_todolist_delete", methods={"POST"})
+     * @Route("/{id<\d+>}", name="app_todolist_delete", methods={"POST"})
      */
     public function delete(Request $request, Todolist $todolist, TodolistRepository $todolistRepository): Response
     {
