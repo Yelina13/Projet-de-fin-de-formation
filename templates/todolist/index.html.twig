@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Todolist index{% endblock %}
+
+{% block body %}
+    <h1>Todolist index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for todolist in todolists %}
+            <tr>
+                <td>{{ todolist.id }}</td>
+                <td>{{ todolist.name }}</td>
+                <td>
+                    <a href="{{ path('app_todolist_show', {'id': todolist.id}) }}">show</a>
+                    <a href="{{ path('app_todolist_edit', {'id': todolist.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_todolist_new') }}">Create new</a>
+{% endblock %}

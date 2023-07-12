@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New StickerCategory{% endblock %}
+
+{% block body %}
+    <h1>Create new StickerCategory</h1>
+
+    {{ include('sticker_category/_form.html.twig') }}
+
+    <a href="{{ path('app_sticker_category_index') }}">back to list</a>
+{% endblock %}

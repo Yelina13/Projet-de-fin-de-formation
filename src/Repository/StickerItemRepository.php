@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\StickerItem;
+use App\Entity\Sticker;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

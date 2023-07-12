@@ -23,7 +23,7 @@ class Todolist
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=user::class, inversedBy="todolists")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolists")
      */
     private $make;
 
@@ -44,12 +44,12 @@ class Todolist
         return $this;
     }
 
-    public function getMake(): ?user
+    public function getMake(): ?User
     {
         return $this->make;
     }
 
-    public function setMake(?user $make): self
+    public function setMake(?User $make): self
     {
         $this->make = $make;
 
