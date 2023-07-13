@@ -14,7 +14,7 @@ class StickerItemType extends AbstractType
     {
         $builder
             ->add('name',TextType::class,[
-                'label' => 'Nom d\'une categorie de sticker item',
+                'label' => 'Nom d\'un sticker item',
                 'attr' => [
                     'placeholder' => 'saisir un nom',
                 ],
