@@ -9,8 +9,8 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Craft</th>
-            <th>Item</th>
+            <th>Utilisateur</th>
+            <th>Objects</th>
         </tr>
     </thead>
     <tbody>
@@ -18,16 +18,12 @@
             <td>{{ sticker.id }}</td>
             <td>{{ sticker.craft }}</td>
                 {% for stickers in sticker %}
-                <td>{{ sticker.contains}}</td>
+            <td>{{ sticker.contains}}</td>
                 {% endfor %}
         </tr>
     </tbody>
 </table>
-
-
     <a href="{{ path('app_sticker_index') }}">back to list</a>
-
-    <a href="{{ path('app_sticker_edit', {'id': sticker.id}) }}">edit</a>
-
-    {{ include('sticker/_delete_form.html.twig') }}
+    <a href="{{ path('app_sticker_edit', {'id': sticker.id}) }}">edit</a>    
+{{ include('sticker/_delete_form.html.twig') }}
 {% endblock %}
