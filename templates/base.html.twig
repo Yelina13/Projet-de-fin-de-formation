@@ -7,14 +7,88 @@
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
         {% endblock %}
 
         {% block javascripts %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         {% endblock %}
+            <link rel="shortcut icon" href="{{ asset("images/favicon-32x32.png") }}" type="favicon">
 
     </head>
-    <body>
+    <body style="background-color: #FFF8E6;" > 
+    
+    <!-- Nav -->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #16645F;" >
+
+        <div class="container-fluid">
+           
+                <img src="{{ asset("images/logo.png") }}" height="50" class="rounded-circle" alt="logo backoffice">
+                
+           {% if is_granted('ROLE_ADMIN') %}
+           
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('app_main') }}"><i class="bi bi-house"></i>Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white  " href="{{ path('app_sticker_index') }}"><i class="bi bi-tags"></i>Etiquettes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white  " href="{{ path('app_sticker_category_index') }}"> Etiquettes Category</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link text-white  " href="{{ path('app_sticker_item_index') }}">Etiquettes items</a>
+                    </li>
+                        <a class="nav-link text-white " href="{{ path('app_article_index') }}"> Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white " href="{{ path('app_article_category_index') }}"> Articles Category</a>
+                    </li>
+                      </li>
+                       <li class="nav-item">
+                        <a class="nav-link text-white " href="{{ path('app_todolist_index') }}"> <i class="bi bi-card-checklist"></i>Todolist</a>
+                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link  text-white" href="{{ path('app_user_index') }}"> Utilisateurs</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link  text-white" href="{{ path('app_register') }}"><i class="bi bi-person-fill-add"></i> Creation d'un utilisateur</a>
+                    </li>
+                </ul>
+                {% endif %}
+                {# 
+                    On teste via 'is_granted' si l'utilisateur est connecté 
+                    Si c'est le cas on affiche le menu utilisateur
+                    Sinon, on affiche seulement le lien de connexion
+                #}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
+                                <i class="bi bi-person-square"></i>
+                                <span>{{ app.user.email }}</span>                               
+                            </a>
+                            <ul class="dropdown-menu bg-danger">
+                                <li><a class="dropdown-item text-white " href="{{ path('app_logout') }}">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                {% else %}
+                    <a href="{{ path('app_login') }}" class="btn btn-success" role="button">Connexion</a>
+                {% endif %}
+
+            
+            </div>
+        </div>
+    </nav>
     <div class="container">
         {% block body %} {% endblock %}
     </div>

@@ -92,4 +92,10 @@ class Sticker
 
         return $this;
     }
+
+
+    public function __toString(): string
+    {
+        return $this->craft;
+    }
 }

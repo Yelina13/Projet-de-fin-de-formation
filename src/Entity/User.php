@@ -6,11 +6,13 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
@@ -37,18 +39,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $password;
 
+
+    // quand on supprime un utilisateur , on veut que ses articles, ses todolist et ses stickers soient supprimés en même temps
+    // pour cela on utilise "cascade={"remove"}"
+
     /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="publish")
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="publish", cascade={"remove"})
      */
     private $articles;
 
     /**
-     * @ORM\OneToMany(targetEntity=Todolist::class, mappedBy="make")
+     * @ORM\OneToMany(targetEntity=Todolist::class, mappedBy="make",  cascade={"remove"})
      */
     private $todolists;
 
     /**
-     * @ORM\OneToMany(targetEntity=Sticker::class, mappedBy="craft")
+     * @ORM\OneToMany(targetEntity=Sticker::class, mappedBy="craft", cascade={"remove"})
      */
     private $stickers;
 
@@ -101,7 +107,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+         $roles[] = 'ROLE_USER';
 
         return array_unique($roles);
     }
@@ -250,5 +256,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    // Ajout de la fonction magique to_tring car sinon message d'erreur Object of class App\Entity\User could not be converted to string
+
+    public function __toString(): string
+    {
+        return $this->username;
+    }
 
 }
