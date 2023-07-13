@@ -10,6 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Title</th>
+                <th>utilisateur</th>
                 <th>Overview</th>
                 <th>Content</th>
                 <th>Published_date</th>
@@ -22,6 +23,7 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.title }}</td>
+                <td>{{ article.publish }}</td>
                 <td>{{ article.overview }}</td>
                 <td>{{ article.content }}</td>
                 <td>{{ article.publishedDate ? article.publishedDate|date('Y-m-d H:i:s') : '' }}</td>

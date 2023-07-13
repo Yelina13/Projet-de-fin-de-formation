@@ -6,13 +6,24 @@
     <h1>Sticker</h1>
 
     <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ sticker.id }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Craft</th>
+            <th>Item</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ sticker.id }}</td>
+            <td>{{ sticker.craft }}</td>
+                {% for stickers in sticker %}
+                <td>{{ sticker.contains}}</td>
+                {% endfor %}
+        </tr>
+    </tbody>
+</table>
+
 
     <a href="{{ path('app_sticker_index') }}">back to list</a>
 
