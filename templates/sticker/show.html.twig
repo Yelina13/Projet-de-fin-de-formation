@@ -14,9 +14,10 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_sticker_index') }}">back to list</a>
+    <a href="{{ path('app_sticker_index') }}"class="btn btn-primary mb-2">back to list</a>
+    <br>
 
-    <a href="{{ path('app_sticker_edit', {'id': sticker.id}) }}">edit</a>
+    <a href="{{ path('app_sticker_edit', {'id': sticker.id}) }}"class="btn btn-primary mb-2">edit</a>
 
     {{ include('sticker/_delete_form.html.twig') }}
 {% endblock %}
