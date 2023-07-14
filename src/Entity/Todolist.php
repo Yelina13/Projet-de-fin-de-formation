@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\TodolistRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=TodolistRepository::class)
@@ -14,21 +15,25 @@ class Todolist
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"get_Todolists"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_Todolists"})
      */
     private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolists")
+     * @Groups({"get_Todolists"})
      */
     private $make;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Groups({"get_Todolists"})
      */
     private $listing;
 

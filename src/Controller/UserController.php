@@ -42,7 +42,7 @@ class UserController extends AbstractController
             
             // On va hacher le mot de passe pour plus de sécurité en mettant dans l'injection de dépendance "UserPasswordHasherInterface $userPasswordHasher"
             // - on lui donne sur la méthode hashPassword, notre $user
-            // - et le mot de passe en clair (qui est déjà dnas le user !)
+            // - et le mot de passe en clair (qui est déjà dans le user !)
             $hashedPassword = $userPasswordHasher->hashPassword($user, $user->getPassword());
 
             // On écrase le mot de passe en clair par le mot de passe haché
