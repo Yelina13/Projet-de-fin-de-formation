@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\TodolistRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=TodolistRepository::class)
@@ -15,25 +17,27 @@ class Todolist
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"get_Todolists"})
+     * @Groups({"get_todolist"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"get_Todolists"})
+     * @Groups({"get_todolist,get_todolist_new"})
+     * @Assert\NotBlank
      */
     private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolists")
-     * @Groups({"get_Todolists"})
+     * @Groups({"get_todolist"})
      */
     private $make;
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Groups({"get_Todolists"})
+     * @Groups({"get_todolist,get_todolist_new"})
+     * @Assert\NotBlank
      */
     private $listing;
 
@@ -77,4 +81,6 @@ class Todolist
 
         return $this;
     }
+    
+
 }

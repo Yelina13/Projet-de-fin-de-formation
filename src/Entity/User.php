@@ -26,7 +26,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Groups({"get_articles", "get_Todolists"})
+     * @Groups({"get_article", "get_Todolist"})
      */
     private $username;
 

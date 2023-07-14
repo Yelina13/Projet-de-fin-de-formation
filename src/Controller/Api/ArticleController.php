@@ -31,7 +31,7 @@ class ArticleController extends AbstractController
             // Avec la réponse
             [],
             // Groupes a envoyer avec la réponse
-            ['groups' => ['get_articles']]
+            ['groups' => ['get_article']]
         );
     }
 
@@ -55,7 +55,7 @@ class ArticleController extends AbstractController
             // Avec la réponse
             [],
             // Groupes a envoyer avec la réponse
-            ['groups' => ['get_articles']]
+            ['groups' => ['get_article']]
         );
     }
 }
