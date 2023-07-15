@@ -3,7 +3,7 @@
 {% block title %}ArticleCategory index{% endblock %}
 
 {% block body %}
-    <h1>ArticleCategory index</h1>
+    <h1>ArticleCategory index <a class="btn btn-success" href="{{ path('app_article_category_new') }}">Create new</a></h1>
 
     {% for message in app.flashes('info') %}
 <div class="alert alert-success">
@@ -37,5 +37,5 @@
         {% endfor %}
         </tbody>
     </table>
-<a class="btn btn-success" href="{{ path('app_article_category_new') }}">Create new</a>
+
 {% endblock %}

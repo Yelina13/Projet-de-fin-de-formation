@@ -3,7 +3,7 @@
 {% block title %}StickerCategory index{% endblock %}
 
 {% block body %}
-    <h1>StickerCategory index</h1>
+    <h1>StickerCategory index <a class="btn btn-success" href="{{ path('app_sticker_category_new') }}">Create new</a></h1>
 
     {% for message in app.flashes('info') %}
     <div class="alert alert-success">
@@ -36,6 +36,6 @@
         {% endfor %}
         </tbody>
     </table>
-<a class="btn btn-success" href="{{ path('app_sticker_category_new') }}">Create new</a>
+
    
 {% endblock %}
