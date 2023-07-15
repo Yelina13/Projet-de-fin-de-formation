@@ -52,6 +52,8 @@ class UserController extends AbstractController
             // et valide => Respecte les contraintes @ Assert
             $userRepository->add($user, true);
 
+            $this->addFlash('info','Utilisateur crée avec succès !') ;
+
             // On revient sur la page liste users
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -92,6 +94,8 @@ class UserController extends AbstractController
             
             $userRepository->add($user, true);
 
+            $this->addFlash('info','Utilisateur modifié avec succès !') ;
+
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -109,6 +113,8 @@ class UserController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $userRepository->remove($user, true);
         }
+
+        $this->addFlash('info','Utilisateur supprimé avec succès !') ;
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }

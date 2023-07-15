@@ -34,8 +34,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $username;
 
     /**
-     * @ORM\Column(type="json")
-     * @Assert\NotBlank
+     * @ORM\Column(type="json") // pas d'asset car soucis de création de compte lorque j'utilise le asset
      */
     private $roles = [];
 

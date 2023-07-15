@@ -37,8 +37,12 @@ class TodolistController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $todolistRepository->add($todolist, true);
 
+            $this->addFlash('info','Todoliste crée avec succès !') ;
+
             return $this->redirectToRoute('app_todolist_index', [], Response::HTTP_SEE_OTHER);
         }
+
+        
 
         return $this->renderForm('todolist/new.html.twig', [
             'todolist' => $todolist,
@@ -67,8 +71,12 @@ class TodolistController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $todolistRepository->add($todolist, true);
 
+            $this->addFlash('info','Todoliste modifiée avec succès !') ;
+
             return $this->redirectToRoute('app_todolist_index', [], Response::HTTP_SEE_OTHER);
         }
+
+        
 
         return $this->renderForm('todolist/edit.html.twig', [
             'todolist' => $todolist,
@@ -84,6 +92,8 @@ class TodolistController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$todolist->getId(), $request->request->get('_token'))) {
             $todolistRepository->remove($todolist, true);
         }
+
+        $this->addFlash('info','Todoliste supprimée avec succès !') ;
 
         return $this->redirectToRoute('app_todolist_index', [], Response::HTTP_SEE_OTHER);
     }
