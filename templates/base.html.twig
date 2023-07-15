@@ -102,6 +102,17 @@
            
          {% endblock %}
     </div>
-    
+
+
+     <!-- Js pour que le message flash disparait automtiquement aprés son affichage-->
+    <script>const alerts = document.querySelectorAll('[class*="alert-"]')
+        for (const alert of alerts) {
+        setTimeout( function() {
+        const bootstrapAlert = bootstrap.Alert.getOrCreateInstance(alert);
+        bootstrapAlert.close();
+    }, 3000); }
+     </script>
+
+     
     </body>
 </html>
