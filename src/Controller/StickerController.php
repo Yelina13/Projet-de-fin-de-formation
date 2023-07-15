@@ -37,6 +37,9 @@ class StickerController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $stickerRepository->add($sticker, true);
 
+
+               $this->addFlash('info','Etiquette créée avec succès !') ; // équivalent à "$request->getSession()->getFlashBag()->add()"
+
             return $this->redirectToRoute('app_sticker_index', [], Response::HTTP_SEE_OTHER);
         }
 

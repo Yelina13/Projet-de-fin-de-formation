@@ -5,6 +5,13 @@
 {% block body %}
     <h1>Sticker index</h1>
 
+{% for message in app.flashes('info') %}
+<div class="alert alert-success">
+{{ message }}
+</div>
+{% endfor %}
+
+
 <table class="table">
     <thead>
         <tr>

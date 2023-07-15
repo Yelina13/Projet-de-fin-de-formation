@@ -23,20 +23,20 @@ class Todolist
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"get_todolist,get_new_todolist"})
+     * @Groups({"get_todolist", "get_new_todolist"})
      * @Assert\NotBlank
      */
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolists")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolist")
      * @Groups({"get_todolist"})
      */
     private $make;
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Groups({"get_todolist,get_new_todolist"})
+     * @Groups({"get_todolist" , "get_new_todolist"})
      * @Assert\NotBlank
      */
     private $listing;

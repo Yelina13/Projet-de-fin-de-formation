@@ -21,7 +21,7 @@ class TodolistController extends AbstractController
      * je rajoute un groupe pour ça et viter un  ['get_Todolist']
      * Method = GET, pas de paramètre
      * 
-     * @Route("/api/todolists", name="api_todolists", methods={"POST"}) ourquoi ça ne marche que en POST et pas avec GET ????? les droits d'amin ???
+     * @Route("/api/todolists", name="api_todolists", methods={"GET"})
      */
     public function articles(TodolistRepository $tr): Response
     {
@@ -44,7 +44,7 @@ class TodolistController extends AbstractController
      * API de récupération d'une seule Todolist avec le nom de l'auteur
      * Method = GET, pas de paramètre
      *
-     * @Route("/api/todolist/{id<\d+>}", name="api_todolist", methods={"POST"}) pourquoi ça ne marche que en POST et pas avec GET ????? les droits d'amin ???
+     * @Route("/api/todolist/{id<\d+>}", name="api_todolist", methods={"GET"})
      */
     public function todolist (TodolistRepository $tr, int $id): Response
     {
@@ -67,12 +67,11 @@ class TodolistController extends AbstractController
  * API de modification d'une todoliste existante
  * Method = POST, données post encodées json dans le corps de la Requete
  *
- * @Route("/api/todolist/edit/{id}", name="api_todolist_update", methods={"POST"}) pourquoi ça ne marche que en POST et pas avec PUT ????? les droits d'amin ???
+ * @Route("/api/todolist/edit/{id}", name="api_todolist_update", methods={"PUT"}) 
  */
 public function updateMovie(
     Request $request,
     TodolistRepository $tr,
-    EntityManagerInterface $em,
     SerializerInterface $serializer,
     ValidatorInterface $validator,
     $id
@@ -97,7 +96,6 @@ public function updateMovie(
         return $this->json($errors, Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
-    $em->flush();
 
     return $this->json(
         $todolist,
@@ -157,9 +155,9 @@ public function updateMovie(
 
      /**
      * API de suppression d'une todolist dont les données ont été fournies en 'POST'
-     * Method = POST, données post encodées json dans le corps de la Requette
+     *
      * 
-     * @Route("/api/todolist/delete/{id<\d+>}", name="api_todolist_post", methods={"POST"})
+     * @Route("/api/todolist/delete/{id<\d+>}", name="api_todolist_post", methods={"DELETE"})
      */
     public function supprimerTodolist(TodolistRepository $tr,$id): Response
 
