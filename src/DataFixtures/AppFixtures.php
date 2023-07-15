@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
     )
     {
         // On récupère la connexion à la BDD (DBAL ~= PDO)
-        // pour exécuter des requêtes manuelles en SQL pur
+        // pour exécuter des requêtes manuelles en SQL (est ce qu'il faut laisser ça ???? est ce qu'on sert bien ??)
         $this->connection = $connection;
         $this->userPasswordHasher = $userPasswordHasher;
      

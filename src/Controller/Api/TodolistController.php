@@ -18,10 +18,10 @@ class TodolistController extends AbstractController
 {
     /**
      * API de récupération de l'ensemble des Todolists avec le nom de l'auteur 
-     * je rajoute un groupe pour ça ['get_Todolist']
+     * je rajoute un groupe pour ça et viter un  ['get_Todolist']
      * Method = GET, pas de paramètre
      * 
-     * @Route("/api/todolists", name="api_todolists", methods={"GET"})
+     * @Route("/api/todolists", name="api_todolists", methods={"POST"}) ourquoi ça ne marche que en POST et pas avec GET ????? les droits d'amin ???
      */
     public function articles(TodolistRepository $tr): Response
     {
@@ -40,12 +40,11 @@ class TodolistController extends AbstractController
         );
     }
 
-
       /**
      * API de récupération d'une seule Todolist avec le nom de l'auteur
      * Method = GET, pas de paramètre
      *
-     * @Route("/api/todolist/{id<\d+>}", name="api_todolist", methods={"GET"})
+     * @Route("/api/todolist/{id<\d+>}", name="api_todolist", methods={"POST"}) pourquoi ça ne marche que en POST et pas avec GET ????? les droits d'amin ???
      */
     public function todolist (TodolistRepository $tr, int $id): Response
     {
@@ -65,10 +64,56 @@ class TodolistController extends AbstractController
     }
 
     /**
-     * API d'jout d'une todolist dont les données ont été fournies en 'POST'
+ * API de modification d'une todoliste existante
+ * Method = POST, données post encodées json dans le corps de la Requete
+ *
+ * @Route("/api/todolist/edit/{id}", name="api_todolist_update", methods={"POST"}) pourquoi ça ne marche que en POST et pas avec PUT ????? les droits d'amin ???
+ */
+public function updateMovie(
+    Request $request,
+    TodolistRepository $tr,
+    EntityManagerInterface $em,
+    SerializerInterface $serializer,
+    ValidatorInterface $validator,
+    $id
+): Response {
+    $jsonContent = $request->getContent();
+
+    // Vérifie si la todolist existe en utilisant son ID
+    $todolist = $tr->find($id);
+
+    // Si la todolist n'est pas trouvé, retourner une erreur
+    if (!$todolist) {
+        return $this->json(['error' => 'todolit not found'], Response::HTTP_NOT_FOUND);
+    }
+
+    // Désérialiser les données JSON et les assigner au todolit existant
+    $todolist = $serializer->deserialize($jsonContent, Todolist::class, 'json', ['object_to_populate' => $todolist]);
+
+    // Valider l'entité avec notre validation
+    $errors = $validator->validate($todolist);
+
+    if (count($errors) > 0) {
+        return $this->json($errors, Response::HTTP_UNPROCESSABLE_ENTITY);
+    }
+
+    $em->flush();
+
+    return $this->json(
+        $todolist,
+        Response::HTTP_OK,
+        [
+            'Location' => $this->generateUrl('api_todolists', ['id' => $todolist->getId()])
+        ],
+        ['groups' => 'get_todolist']
+    );
+}
+
+    /**
+     * API pour créer une todolist dont les données ont été fournies en 'POST'
      * Method = POST, données post encodées json dans le corps de la Requette
      * 
-     * @Route("/api/todolist/new", name="api_todolist_new", methods={"POST"})
+     * @Route("/api/todolist/new", name="api_todolist_new", methods={"POST"}) 
      */
     public function ajouterTodolist (
         Request $request, 
@@ -104,12 +149,9 @@ class TodolistController extends AbstractController
             'Location' => $this->generateUrl('api_todolist', ['id' => $todolist->getId()])
         ],
 
-        ['groups' => 'get_todolist_new']
+        ['groups' => 'get_new_todolist']
 
-
-         );
-        
-       
+         );       
     }
 
 
@@ -131,7 +173,7 @@ class TodolistController extends AbstractController
         $tr->remove($todolist, true);
 
         return $this->json(
-            // La liste des films à sérialiser
+            // La liste des todolits à sérialiser
             $todolist,
             // Code de retour HTTP
             202,

@@ -16,7 +16,7 @@ class ArticleController extends AbstractController
      * je rajoute un groupe pour ça ['get_articles']
      * Method = GET, pas de paramètre
      * 
-     * @Route("/api/articles", name="api_articles", methods={"GET"})
+     * @Route("/api/articles", name="api_articles", methods={"POST"})  pourquoi ça ne marche que en POST et pas avec GET ????? les droits d'amin ???
      */
     public function articles(ArticleRepository $ar): Response
     {
@@ -40,7 +40,7 @@ class ArticleController extends AbstractController
      * API de récupération d'un seul article
      * Method = GET, pas de paramètre
      *
-     * @Route("/api/article/{id<\d+>}", name="api_article", methods={"GET"})
+     * @Route("/api/article/{id<\d+>}", name="api_article", methods={"POST"}) pourquoi ça ne marche que en POST et pas avec GET ?????
      */
     public function article (ArticleRepository $ar, int $id): Response
     {
