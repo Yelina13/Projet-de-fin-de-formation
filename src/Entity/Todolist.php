@@ -29,7 +29,7 @@ class Todolist
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolist")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolists")
      * @Groups({"get_todolist"})
      */
     private $make;

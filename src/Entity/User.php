@@ -60,7 +60,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $todolists;
 
     /**
-     * @ORM\OneToMany(targetEntity=Sticker::class, mappedBy="craft", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity=Sticker::class, mappedBy="craft", cascade={"remove"},)
      */
     private $stickers;
 
