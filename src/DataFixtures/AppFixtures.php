@@ -112,10 +112,10 @@ class AppFixtures extends Fixture
         // On rajoute quelques users pour avoir de la data
                 
         $userList = [];
-        for ($u = 1; $u <= 10; $u++) { 
+        for ($u = 1; $u <= 25; $u++) { 
         $user = new User();
-        $user->setEmail($faker->email());
-        $user->setUsername($faker->firstName());
+        $user->setEmail($faker->unique()->email());
+        $user->setUsername($faker->unique()->firstName());
         $user->setRoles(['ROLE_USER']);
         $user->setPassword(
         $this->userPasswordHasher->hashPassword($user, 'user')
@@ -129,7 +129,7 @@ class AppFixtures extends Fixture
             // On crée une liste de catégories pour les articles
         $articleCategoryList = [];
 
-        for ($ac = 1; $ac <= 10; $ac++) { 
+        for ($ac = 1; $ac <= 25; $ac++) { 
             $articleCategory = new ArticleCategory();
             $articleCategory->setName($faker->word());
             // on persist
@@ -141,7 +141,7 @@ class AppFixtures extends Fixture
          // On crée une liste de catégories pour les stickers
          $stickerCategoryList = [];
 
-         for ($g = 1; $g <=10; $g++) { 
+         for ($g = 1; $g <=25; $g++) { 
              $stickerCategory = new StickerCategory();
              $stickerCategory->setName($faker->word());
              // on persist
@@ -154,7 +154,7 @@ class AppFixtures extends Fixture
           // On crée une liste d'items pour les stickers
          $stickerItemList = [];
 
-         for ($g = 1; $g <=10; $g++) { 
+         for ($g = 1; $g <=25; $g++) { 
              $stickerItem = new StickerItem();
              $stickerItem->setName($faker->word());
              $manager->persist($stickerItem);
@@ -166,7 +166,7 @@ class AppFixtures extends Fixture
        
          $article = [];
 
-         for ($ac = 1; $ac <= 10; $ac++) { 
+         for ($ac = 1; $ac <= 25; $ac++) { 
              $article = new Article();
 
              $article->setTitle($faker->word());
@@ -175,13 +175,13 @@ class AppFixtures extends Fixture
              $article->setPublishedDate($faker->dateTime('now'));
 
 
-            for ($c = 1; $c <= 10; $c++) {
+            for ($c = 1; $c <= 25; $c++) {
                 $randomArticleCategory = $articleCategoryList[mt_rand(0, count($articleCategoryList) - 1)];
 
                 // on associe
                 $article->setIsFrom($randomArticleCategory);
              }
-             for ($p = 1; $p <= 10; $p++) {
+             for ($p = 1; $p <= 25; $p++) {
                 $randomArticleAuthor = $userList[mt_rand(0, count($userList) - 1)];
 
                 // on associe
@@ -196,7 +196,7 @@ class AppFixtures extends Fixture
        
            // on crée une entité
            $sticker = new Sticker();
-           for ($sc = 1; $sc <= 10; $sc++) {
+           for ($sc = 1; $sc <= 25; $sc++) {
             $sticker = new Sticker(); // Créer un nouvel objet Sticker à chaque itération
         
             $randomStickerCategory = $stickerCategoryList[random_int(0, count($stickerCategoryList) - 1)];
@@ -216,12 +216,12 @@ class AppFixtures extends Fixture
                
         }
 
-                for ($ac = 1; $ac <= 10; $ac++) { 
+                for ($ac = 1; $ac <= 25; $ac++) { 
                 $todolist = new Todolist;
                 $todolist->setName($faker->word());
                 $todolist->setListing($faker->text(100));
 
-                for ($cp = 1; $cp <=10; $cp++) {
+                for ($cp = 1; $cp <=25; $cp++) {
                     $randomTodolistCreator = $userList[mt_rand(0, count($userList) - 1)];
 
                     // on associe

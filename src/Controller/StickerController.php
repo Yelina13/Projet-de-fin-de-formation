@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Sticker;
 use App\Form\StickerType;
 use App\Repository\StickerRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,20 @@ class StickerController extends AbstractController
     /**
      * @Route("/", name="app_sticker_index", methods={"GET"})
      */
-    public function index(StickerRepository $stickerRepository): Response
+    public function index(StickerRepository $stickerRepository,PaginatorInterface $paginator, Request $request): Response
     {
+
+            $data = $stickerRepository->findall();
+
+            $stickers = $paginator->paginate(
+            $data,
+            $request->query->getInt('page',1),
+            10
+
+            );
+
         return $this->render('sticker/index.html.twig', [
-            'stickers' => $stickerRepository->findAll(),
+            'stickers' => $stickers,
         ]);
     }
 
