@@ -43,11 +43,5 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <div class="d-flex justify-content-center">
-    {% do stickers.setPageRange(3) %}
-    {{knp_pagination_render(stickers, 'Utils/Pagination.html.twig')}}
-    </div>
-
     
 {% endblock %}
