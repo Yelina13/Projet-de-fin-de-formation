@@ -3,9 +3,16 @@
 {% block title %}Todolist index{% endblock %}
 
 {% block body %}
-    <h1>Todolist index</h1>
+    <h1>Todolist index <a class="btn btn-success" href="{{ path('app_todolist_new') }}">Create new</a></h1>
 
-    <table class="table ">
+    {% for message in app.flashes('info') %}
+    <div class="alert alert-success">
+    {{ message }}
+    </div>
+    {% endfor %}
+
+
+    <table class="table table-hover ">
         <thead>
             <tr>
                 <th>Id</th>
@@ -31,5 +38,5 @@
         {% endfor %}
         </tbody>
     </table>
-<a class="btn btn-success" href="{{ path('app_todolist_new') }}">Create new</a>
+
 {% endblock %}

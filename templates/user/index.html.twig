@@ -3,9 +3,16 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <h1>User index <a class="btn btn-success" href="{{ path('app_user_new') }}">Create new</a></h1>
 
-    <table class="table">
+    {% for message in app.flashes('info') %}
+    <div class="alert alert-success">
+    {{ message }}
+    </div>
+    {% endfor %}
+
+
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
@@ -33,6 +40,6 @@
         {% endfor %}
         </tbody>
     </table>
-<a class="btn btn-success" href="{{ path('app_user_new') }}">Create new</a>
+
     
 {% endblock %}

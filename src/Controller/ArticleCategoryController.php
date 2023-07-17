@@ -37,6 +37,8 @@ class ArticleCategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $articleCategoryRepository->add($articleCategory, true);
 
+            $this->addFlash('info','Catégorie d\'article crée avec succès !') ; // équivalent à "$request->getSession()->getFlashBag()->add()"
+
             return $this->redirectToRoute('app_article_category_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -67,6 +69,8 @@ class ArticleCategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $articleCategoryRepository->add($articleCategory, true);
 
+            $this->addFlash('info','Catégorie d\'article modifiée avec succès !') ;
+
             return $this->redirectToRoute('app_article_category_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -84,6 +88,8 @@ class ArticleCategoryController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$articleCategory->getId(), $request->request->get('_token'))) {
             $articleCategoryRepository->remove($articleCategory, true);
         }
+
+        $this->addFlash('info','Catégorie d\'article supprimée avec succès !') ;
 
         return $this->redirectToRoute('app_article_category_index', [], Response::HTTP_SEE_OTHER);
     }

@@ -18,13 +18,13 @@
             <link rel="shortcut icon" href="{{ asset("images/favicon-32x32.png") }}" type="favicon">
 
     </head>
-    <body style="background-color: #FFF8E6;" > 
+    <body> 
     
     <!-- Nav -->
         
            
                 
-           {% if is_granted('ROLE_ADMIN') %}
+                  {% if is_granted('ROLE_ADMIN') %}
            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #16645F;" >
 
             <div class="container-fluid">
@@ -62,7 +62,6 @@
 
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown">
-                                <i class="bi bi-person-square"></i>
                                 <span>{{ app.user.email }}</span>                               
                             </a>
                             <ul class="dropdown-menu bg-danger">
@@ -71,11 +70,11 @@
                         </li>
                     </ul>
                      
-            
-                  <form class="d-flex" action="#">
+            <!--barre de recherche peut être à fair en V2 -->
+                 <!-- <form class="d-flex" action="#">
                     <input class="form-control form-control-sm me-2" name="search" type="search" placeholder="Rechercher...">
                     <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
-                 </form>
+                 </form> -->
           
 
             </div>
@@ -102,6 +101,17 @@
            
          {% endblock %}
     </div>
-    
+
+
+     <!-- Js pour que le message flash disparait automtiquement aprés son affichage-->
+    <script>const alerts = document.querySelectorAll('[class*="alert-"]')
+        for (const alert of alerts) {
+        setTimeout( function() {
+        const bootstrapAlert = bootstrap.Alert.getOrCreateInstance(alert);
+        bootstrapAlert.close();
+    }, 2000); }
+     </script>
+
+
     </body>
 </html>

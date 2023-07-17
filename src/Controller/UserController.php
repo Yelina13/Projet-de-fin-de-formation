@@ -42,7 +42,7 @@ class UserController extends AbstractController
             
             // On va hacher le mot de passe pour plus de sécurité en mettant dans l'injection de dépendance "UserPasswordHasherInterface $userPasswordHasher"
             // - on lui donne sur la méthode hashPassword, notre $user
-            // - et le mot de passe en clair (qui est déjà dnas le user !)
+            // - et le mot de passe en clair (qui est déjà dans le user !)
             $hashedPassword = $userPasswordHasher->hashPassword($user, $user->getPassword());
 
             // On écrase le mot de passe en clair par le mot de passe haché
@@ -51,6 +51,8 @@ class UserController extends AbstractController
             // On arrive ici si le formulaire est soumis (POST)
             // et valide => Respecte les contraintes @ Assert
             $userRepository->add($user, true);
+
+            $this->addFlash('info','Utilisateur crée avec succès !') ;
 
             // On revient sur la page liste users
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
@@ -92,6 +94,8 @@ class UserController extends AbstractController
             
             $userRepository->add($user, true);
 
+            $this->addFlash('info','Utilisateur modifié avec succès !') ;
+
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -109,6 +113,8 @@ class UserController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $userRepository->remove($user, true);
         }
+
+        $this->addFlash('info','Utilisateur supprimé avec succès !') ;
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }

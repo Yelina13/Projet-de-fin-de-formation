@@ -32,7 +32,7 @@ class AppFixtures extends Fixture
     )
     {
         // On récupère la connexion à la BDD (DBAL ~= PDO)
-        // pour exécuter des requêtes manuelles en SQL pur
+        // pour exécuter des requêtes manuelles en SQL (est ce qu'il faut laisser ça ???? est ce qu'on sert bien ??)
         $this->connection = $connection;
         $this->userPasswordHasher = $userPasswordHasher;
      
@@ -202,6 +202,7 @@ class AppFixtures extends Fixture
             $randomStickerCategory = $stickerCategoryList[random_int(0, count($stickerCategoryList) - 1)];
             $sticker->setIsAbout($randomStickerCategory);
             
+            // AddContain est utlisé pour affiché les Objets avec la fonction ManyTomany 
             $randomStickerItem = $stickerItemList[random_int(1, count($stickerItemList)  - 1)];
             $sticker->addContain($randomStickerItem); 
 
@@ -209,17 +210,11 @@ class AppFixtures extends Fixture
             $randomStickerCreator = $userList[random_int(1, count($userList)  - 1)];
             $sticker->setCraft($randomStickerCreator);
              
-           
-
                 
             $manager->persist($sticker); // Persist the sticker object
 
                
         }
-
-      
-
-
 
                 for ($ac = 1; $ac <= 10; $ac++) { 
                 $todolist = new Todolist;

@@ -37,6 +37,8 @@ class StickerItemController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $stickerItemRepository->add($stickerItem, true);
 
+            $this->addFlash('info','Objet d\'étiquette créée avec succès !') ;
+
             return $this->redirectToRoute('app_sticker_item_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -67,6 +69,8 @@ class StickerItemController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $stickerItemRepository->add($stickerItem, true);
 
+            $this->addFlash('info','Objet d\'étiquette modifié avec succès !') ;
+
             return $this->redirectToRoute('app_sticker_item_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -84,6 +88,8 @@ class StickerItemController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$stickerItem->getId(), $request->request->get('_token'))) {
             $stickerItemRepository->remove($stickerItem, true);
         }
+
+        $this->addFlash('info','Objet d\'étiquette supprimé avec succès !') ;
 
         return $this->redirectToRoute('app_sticker_item_index', [], Response::HTTP_SEE_OTHER);
     }
