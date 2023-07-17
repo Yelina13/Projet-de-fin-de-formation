@@ -3,15 +3,20 @@
 {% block title %}StickerItem index{% endblock %}
 
 {% block body %}
-    <h1>StickerItem index</h1>
+    <h1>StickerItem index <a class="btn btn-success" href="{{ path('app_sticker_item_new') }}">Create new</a></h1>
 
-    <table class="table">
+    {% for message in app.flashes('info') %}
+    <div class="alert alert-success">
+    {{ message }}
+    </div>
+    {% endfor %}
+
+
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Show</th>
-                <th>Edit</th>
+
             </tr>
         </thead>
         <tbody>
@@ -20,20 +25,12 @@
                 <td>{{ sticker_item.id }}</td>
                 <td>{{ sticker_item.name }}</td>
                 <td>
-                    <a href="{{ path('app_sticker_item_show', {'id': sticker_item.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"></i></a>
-                     </td>
 
-                    <td>
-                    <a href="{{ path('app_sticker_item_edit', {'id': sticker_item.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
                 </td>
             </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
+        {% endfor %}        
         </tbody>
     </table>
 
-    <a class="btn btn-success" href="{{ path('app_sticker_item_new') }}">Create new</a>
+
 {% endblock %}

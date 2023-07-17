@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Sticker;
 use App\Form\StickerType;
 use App\Repository\StickerRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,20 @@ class StickerController extends AbstractController
     /**
      * @Route("/", name="app_sticker_index", methods={"GET"})
      */
-    public function index(StickerRepository $stickerRepository): Response
+    public function index(StickerRepository $stickerRepository,PaginatorInterface $paginator, Request $request): Response
     {
+
+            $data = $stickerRepository->findall();
+
+            $stickers = $paginator->paginate(
+            $data,
+            $request->query->getInt('page',1),
+            10
+
+            );
+
         return $this->render('sticker/index.html.twig', [
-            'stickers' => $stickerRepository->findAll(),
+            'stickers' => $stickers,
         ]);
     }
 
@@ -36,6 +47,9 @@ class StickerController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $stickerRepository->add($sticker, true);
+
+
+               $this->addFlash('info','Etiquette créée avec succès !') ; // équivalent à "$request->getSession()->getFlashBag()->add()"
 
             return $this->redirectToRoute('app_sticker_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -67,6 +81,8 @@ class StickerController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $stickerRepository->add($sticker, true);
 
+            $this->addFlash('info','Etiquette modifiée avec succès !') ;
+
             return $this->redirectToRoute('app_sticker_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -84,6 +100,7 @@ class StickerController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$sticker->getId(), $request->request->get('_token'))) {
             $stickerRepository->remove($sticker, true);
         }
+        $this->addFlash('info','Etiquette supprimée avec succès !') ;
 
         return $this->redirectToRoute('app_sticker_index', [], Response::HTTP_SEE_OTHER);
     }

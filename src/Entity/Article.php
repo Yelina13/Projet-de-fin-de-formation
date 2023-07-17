@@ -4,6 +4,10 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 
 
@@ -16,47 +20,43 @@ class Article
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * 
+
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=64)
-     *
-     * 
+
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * 
-     * 
+
      */
     private $overview;
 
     /**
      * @ORM\Column(type="text")
-     *
-     * 
+
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
-     * 
-     * 
+
      */
     private $published_date;
 
     /**
      * @ORM\ManyToOne(targetEntity=ArticleCategory::class, inversedBy="articles")
-     *
+
      */
     private $is_from;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="articles")
-     * 
+
      */
     private $publish;
 

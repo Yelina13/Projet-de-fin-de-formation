@@ -3,35 +3,28 @@
 {% block title %}Sticker index{% endblock %}
 
 {% block body %}
-    <h1>Sticker index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Show</th>
-                <th>Edit</th>
-            </tr>
-        </thead>
-        <tbody>
+
         {% for sticker in stickers %}
             <tr>
                 <td>{{ sticker.id }}</td>
+                <td>{{ sticker.craft }}</td>
                 <td>
-                    <a href="{{ path('app_sticker_show', {'id': sticker.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"></i></a>
-                     </td>
 
-                    <td>
-                    <a href="{{ path('app_sticker_edit', {'id': sticker.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
                 </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="2">no records found</td>
-            </tr>
+                <td>
+                        {{ sticker.isabout }}
+                </td>
+               <td>
+                 <a  href="{{ path('app_sticker_show', {'id': sticker.id}) }}"><i class="bi bi-eye-fill" style="font-size: 2rem; color: green" ></i></a>
+                 </td>
+                <td>
+                 <a  href="{{ path('app_sticker_edit', {'id': sticker.id}) }}"><i class="bi bi-pencil-square " style="font-size: 2rem; color: green"></i></a>
+                </td>
+           </tr>
         {% endfor %}
-        </tbody>
-    </table>
+    </tbody>
+</table>
 
-    <a class="btn btn-success" href="{{ path('app_sticker_new') }}">Create new</a>
+
 {% endblock %}

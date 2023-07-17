@@ -7,6 +7,10 @@ use App\Entity\StickerItem;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 /**
  * @ORM\Entity(repositoryClass=StickerRepository::class)
@@ -96,6 +100,8 @@ class Sticker
 
     public function __toString(): string
     {
-        return $this->craft;
+        // Return a string representation of the Sticker object.
+        // You can choose what properties or information to include in the string.
+        return $this->craft ?? ''; // Assuming the Sticker object has a "name" property
     }
 }

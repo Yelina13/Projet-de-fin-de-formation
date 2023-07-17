@@ -3,15 +3,20 @@
 {% block title %}StickerCategory index{% endblock %}
 
 {% block body %}
-    <h1>StickerCategory index</h1>
+    <h1>StickerCategory index <a class="btn btn-success" href="{{ path('app_sticker_category_new') }}">Create new</a></h1>
 
-    <table class="table">
+    {% for message in app.flashes('info') %}
+    <div class="alert alert-success">
+    {{ message }}
+    </div>
+    {% endfor %}
+
+
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Show</th>
-                <th>Edit</th>
+
             </tr>
         </thead>
         <tbody>
@@ -20,20 +25,15 @@
                 <td>{{ sticker_category.id }}</td>
                 <td>{{ sticker_category.name }}</td>
                 <td>
-                    <a href="{{ path('app_sticker_category_show', {'id': sticker_category.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"></i></a>
-                     </td>
 
-                    <td>
-                    <a href="{{ path('app_sticker_category_edit', {'id': sticker_category.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
                 </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
+                <td>    
+                    <a  href="{{ path('app_sticker_category_edit', {'id': sticker_category.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+                </td>
+            </tr>  
         {% endfor %}
         </tbody>
     </table>
 
-    <a class="btn btn-success" href="{{ path('app_sticker_category_new') }}">Create new</a>
+
 {% endblock %}

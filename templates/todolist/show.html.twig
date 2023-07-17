@@ -5,18 +5,25 @@
 {% block body %}
     <h1>Todolist</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ todolist.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ todolist.name }}</td>
-            </tr>
-        </tbody>
-    </table>
+   
+ <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Utilisateur</th>
+            <th>Nom de la liste</th>
+            <th>Liste</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ todolist.id }}</td>
+            <td>{{ todolist.make }}</td>
+            <td>{{ todolist.name}}</td>
+            <td>{{ todolist.listing }}</td>
+        </tr>
+    </tbody>
+</table>
 
     <a href="{{ path('app_todolist_index') }}"class="btn btn-primary mb-2">back to list</a>
 
