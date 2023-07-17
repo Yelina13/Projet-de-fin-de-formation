@@ -9,27 +9,26 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>Nom</th>
+                <th>Visualiser</th>
+                <th>Editer</th>
             </tr>
         </thead>
         <tbody>
         {% for article_category in article_categories %}
             <tr>
                 <td>{{ article_category.id }}</td>
-                <td>{{ article_category.name }}</td>
+                <td>{{ article_category.name }}</td>         
                 <td>
-                    <a href="{{ path('app_article_category_show', {'id': article_category.id}) }}">show</a>
-                    <a href="{{ path('app_article_category_edit', {'id': article_category.id}) }}">edit</a>
+                    <a  href="{{ path('app_article_category_show', {'id': article_category.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
                 </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
+                <td>    
+                    <a  href="{{ path('app_article_category_edit', {'id': article_category.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+                </td>
+
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('app_article_category_new') }}">Create new</a>
+<a class="btn btn-success" href="{{ path('app_article_category_new') }}">Create new</a>
 {% endblock %}

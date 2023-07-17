@@ -9,11 +9,13 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
-                <th>Overview</th>
+                <th>Titre</th>
+                <th>utilisateur</th>
+                <th>Résumé</th>
                 <th>Content</th>
-                <th>Published_date</th>
-                <th>actions</th>
+                <th>Publié </th>
+                <th>Visualiser</th>
+                <th>Editer</th>
             </tr>
         </thead>
         <tbody>
@@ -21,21 +23,20 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.title }}</td>
+                <td>{{ article.publish }}</td>
                 <td>{{ article.overview }}</td>
                 <td>{{ article.content }}</td>
                 <td>{{ article.publishedDate ? article.publishedDate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
+                    <a  href="{{ path('app_article_show', {'id': article.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
                 </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
+                <td>    
+                    <a  href="{{ path('app_article_edit', {'id': article.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_article_new') }}">Create new</a>
+    <a class="btn btn-success" href="{{ path('app_article_new') }}">Create new</a>
 {% endblock %}

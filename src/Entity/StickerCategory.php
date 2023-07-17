@@ -80,4 +80,11 @@ class StickerCategory
 
         return $this;
     }
+
+       // Ajout de la fonction magique to_tring car sinon message d'erreur Object of class App\Entity\UserCategory could not be converted to string
+
+       public function __toString(): string
+       {
+           return $this->name;
+       }
 }

@@ -92,4 +92,12 @@ class Sticker
 
         return $this;
     }
+
+
+    public function __toString(): string
+    {
+        // Return a string representation of the Sticker object.
+        // You can choose what properties or information to include in the string.
+        return $this->craft ?? ''; // Assuming the Sticker object has a "name" property
+    }
 }

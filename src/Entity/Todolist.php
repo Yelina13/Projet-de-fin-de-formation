@@ -27,6 +27,11 @@ class Todolist
      */
     private $make;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $listing;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Todolist
     public function setMake(?User $make): self
     {
         $this->make = $make;
+
+        return $this;
+    }
+
+    public function getListing(): ?string
+    {
+        return $this->listing;
+    }
+
+    public function setListing(?string $listing): self
+    {
+        $this->listing = $listing;
 
         return $this;
     }
