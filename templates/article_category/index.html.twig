@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ArticleCategory index{% endblock %}
+{% block title %}ArticleCategory index
+{% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
     <h1>ArticleCategory index <a class="btn btn-success" href="{{ path('app_article_category_new') }}">Create new</a></h1>
 
     {% for message in app.flashes('info') %}
@@ -39,4 +41,42 @@
     </table>
 
 
+=======
+	<h1>ArticleCategory index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Show</th>
+				<th>Edit</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for article_category in article_categories %}
+				<tr>
+					<td>{{ article_category.id }}</td>
+					<td>{{ article_category.name }}</td>
+					<td>
+						<a href="{{ path('app_article_category_show', {'id': article_category.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"></i></a>
+
+                        </td>
+
+                        <td>
+							<a href="{{ path('app_article_category_edit', {'id': article_category.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="3">no records found</td>
+						</tr>
+					{% endfor %}
+				</tr>
+			</tbody>
+		</tbody>
+	</table>
+
+	<a class="btn btn-success" href="{{ path('app_article_category_new') }}">Create new</a>
+>>>>>>> Boostrap-Buttons
 {% endblock %}

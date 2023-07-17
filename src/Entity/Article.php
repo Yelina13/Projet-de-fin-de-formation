@@ -9,6 +9,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 
+
+
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  */
@@ -18,43 +20,75 @@ class Article
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+<<<<<<< HEAD
      * @Groups({"get_article"})
+=======
+     * 
+>>>>>>> Boostrap-Buttons
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=64)
+<<<<<<< HEAD
      * @Groups({"get_article"})
+=======
+     *
+     * 
+>>>>>>> Boostrap-Buttons
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+<<<<<<< HEAD
      * @Groups({"get_article"})
+=======
+     * 
+     * 
+>>>>>>> Boostrap-Buttons
      */
     private $overview;
 
     /**
      * @ORM\Column(type="text")
+<<<<<<< HEAD
      * @Groups({"get_article"})
+=======
+     *
+     * 
+>>>>>>> Boostrap-Buttons
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
+<<<<<<< HEAD
      * @Groups({"get_article"})
+=======
+     * 
+     * 
+>>>>>>> Boostrap-Buttons
      */
     private $published_date;
 
     /**
      * @ORM\ManyToOne(targetEntity=ArticleCategory::class, inversedBy="articles")
+<<<<<<< HEAD
      * @Groups({"get_article"})
+=======
+     *
+>>>>>>> Boostrap-Buttons
      */
     private $is_from;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="articles")
+<<<<<<< HEAD
      * @Groups({"get_article"})
+=======
+     * 
+>>>>>>> Boostrap-Buttons
      */
     private $publish;
 

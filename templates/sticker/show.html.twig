@@ -6,6 +6,7 @@
     <h1>Sticker</h1>
 
     <table class="table">
+<<<<<<< HEAD
     <thead>
         <tr>
             <th>Id</th>
@@ -31,4 +32,20 @@
     <a href="{{ path('app_sticker_index') }}">back to list</a>
     <a href="{{ path('app_sticker_edit', {'id': sticker.id}) }}">edit</a>    
 {{ include('sticker/_delete_form.html.twig') }}
+=======
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sticker.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_sticker_index') }}"class="btn btn-primary mb-2">back to list</a>
+    <br>
+
+    <a href="{{ path('app_sticker_edit', {'id': sticker.id}) }}"class="btn btn-primary mb-2">edit</a>
+
+    {{ include('sticker/_delete_form.html.twig') }}
+>>>>>>> Boostrap-Buttons
 {% endblock %}
