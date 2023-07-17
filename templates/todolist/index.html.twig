@@ -12,7 +12,7 @@
     {% endfor %}
 
 
-    <table class="id="table" table-hover " data-toggle="table" data-search="true"  >
+    <table class="id" "table-hover" data-toggle="table" data-search="true"  >
         <thead>
             <tr>
                 <th data-sortable="true" data-field="id">Id</th>
@@ -20,19 +20,26 @@
                 <th data-sortable="true" data-field="Utilisateur">Utilisateur</th>
                 <th>Visualiser</th>
                 <th>Editer</th>
+                <th>Supprimer</th>
             </tr>
         </thead>
         <tbody>
         {% for todolist in todolists %}
             <tr>
-                <td>{{ todolist.id }}</td>
+                <td style="width:3%;">{{ todolist.id }}</td>
                 <td>{{ todolist.name }}</td>
                 <td>{{ todolist.make }}</td>
-                <td>
+                <td style="width:3%;">
                     <a  href="{{ path('app_todolist_show', {'id': todolist.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
                 </td>
-                <td>    
+                <td style="width:3%;">    
                     <a  href="{{ path('app_todolist_edit', {'id': todolist.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+                </td>
+                  <td style="width:3%;">
+                 <form method="post" action="{{ path('app_todolist_delete', {'id': todolist.id}) }}" onsubmit="return confirm('Souhaitez vous vraiment supprimer cette todolist ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ todolist.id) }}">
+                <button class="btn"><a  href="{{ path('app_todolist_edit', {'id': todolist.id}) }}"><i class="bi bi-trash " style="font-size: 2rem; color: green"></i></a></button>
+                </form>
                 </td>
             </tr>
         {% endfor %}

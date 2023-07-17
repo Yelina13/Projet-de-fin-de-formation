@@ -12,25 +12,32 @@
     {% endfor %}
 
 
-    <table class="id="table" table-hover " data-toggle="table" data-search="true"  >
+    <table class="id" "table-hover" data-toggle="table" data-search="true"  >
         <thead>
             <tr>
                 <th data-sortable="true" data-field="Id">Id</th>
                 <th data-sortable="true" data-field="Nom de l'object">Nom de l'object</th>
                 <th>Visualiser</th>
                 <th>Editer</th>
+                <th>Supprimer</th>
             </tr>
         </thead>
         <tbody>
         {% for sticker_item in sticker_items %}
             <tr>
-                <td>{{ sticker_item.id }}</td>
+                <td style="width:3%;" >{{ sticker_item.id }}</td>
                 <td>{{ sticker_item.name }}</td>
-                <td>
+                <td style="width:3%;">
                     <a  href="{{ path('app_sticker_item_show', {'id': sticker_item.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
                 </td>
-                <td>    
+                <td style="width:3%;">    
                     <a  href="{{ path('app_sticker_item_edit', {'id': sticker_item.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+                </td>
+                <td style="width:3%;">
+                 <form method="post" action="{{ path('app_sticker_item_delete', {'id': sticker_item.id}) }}" onsubmit="return confirm('Souhaitez vous vraiment supprimer cette Objet ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sticker_item.id) }}">
+                <button class="btn"><a  href="{{ path('app_sticker_item_edit', {'id': sticker_item.id}) }}"><i class="bi bi-trash " style="font-size: 2rem; color: green"></i></a></button>
+                </form>
                 </td>
             </tr>
         {% endfor %}        

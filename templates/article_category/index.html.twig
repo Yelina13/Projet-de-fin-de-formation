@@ -12,25 +12,33 @@
 {% endfor %}
 
 
-    <table class="id="table" table table-hover" data-toggle="table" data-search="true"  >
+    <table class="id" "table-hover" data-toggle="table" data-search="true"  >
         <thead>
             <tr>
                 <th data-sortable="true" data-field="id">Id</th>
                 <th data-sortable="true" data-field="Nom">Nom</th>
                 <th>Visualiser</th>
                 <th>Editer</th>
+                <th>Supprimer</th>
             </tr>
         </thead>
         <tbody>
         {% for article_category in article_categories %}
             <tr>
-                <td>{{ article_category.id }}</td>
+                <td style="width:3%;">{{ article_category.id }}</td>
                 <td>{{ article_category.name }}</td>         
-                <td>
+                <td style="width:3%;">
                     <a  href="{{ path('app_article_category_show', {'id': article_category.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
                 </td>
-                <td>    
+                <td style="width:3%;">    
                     <a  href="{{ path('app_article_category_edit', {'id': article_category.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+                </td>
+                   <td style="width:3%;">
+                <form method="post" action="{{ path('app_article_category_delete', {'id': article_category.id}) }}" onsubmit="return confirm('Souhaitez vous vraiment supprimer cette catégorie d'article ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article_category.id) }}">
+                <button class="btn"><a  href="{{ path('app_article_category_edit', {'id': article_category.id}) }}"><i class="bi bi-trash " style="font-size: 2rem; color: green"></i></a></button>
+                </form>
+
                 </td>
 
             </tr>
