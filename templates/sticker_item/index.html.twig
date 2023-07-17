@@ -16,9 +16,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom de l'object</th>
-                <th>Visualiser</th>
-                <th>Editer</th>
+
             </tr>
         </thead>
         <tbody>
@@ -27,10 +25,7 @@
                 <td>{{ sticker_item.id }}</td>
                 <td>{{ sticker_item.name }}</td>
                 <td>
-                    <a  href="{{ path('app_sticker_item_show', {'id': sticker_item.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
-                </td>
-                <td>    
-                    <a  href="{{ path('app_sticker_item_edit', {'id': sticker_item.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+
                 </td>
             </tr>
         {% endfor %}        

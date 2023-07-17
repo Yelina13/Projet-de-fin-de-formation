@@ -9,6 +9,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 
 
+
+
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  */
@@ -18,43 +20,43 @@ class Article
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"get_article"})
+
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=64)
-     * @Groups({"get_article"})
+
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"get_article"})
+
      */
     private $overview;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"get_article"})
+
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"get_article"})
+
      */
     private $published_date;
 
     /**
      * @ORM\ManyToOne(targetEntity=ArticleCategory::class, inversedBy="articles")
-     * @Groups({"get_article"})
+
      */
     private $is_from;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="articles")
-     * @Groups({"get_article"})
+
      */
     private $publish;
 
