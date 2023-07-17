@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "909a63a31b9629c5613b36e70c16178b",
-=======
-    "content-hash": "76df26dcd55e336ef7b84cf8675f38ec",
->>>>>>> Boostrap-Buttons
+
     "packages": [
         {
             "name": "doctrine/annotations",

@@ -50,10 +50,10 @@
             "migrations/.gitignore"
         ]
     },
-<<<<<<< HEAD
+
     "knplabs/knp-paginator-bundle": {
         "version": "v5.9.0"
-=======
+
     "lexik/jwt-authentication-bundle": {
         "version": "2.19",
         "recipe": {
@@ -65,7 +65,7 @@
         "files": [
             "config/packages/lexik_jwt_authentication.yaml"
         ]
->>>>>>> Boostrap-Buttons
+
     },
     "phpunit/phpunit": {
         "version": "9.6",
