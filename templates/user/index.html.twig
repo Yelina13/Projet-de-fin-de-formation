@@ -12,14 +12,14 @@
     {% endfor %}
 
 
-    <table class="table table-hover">
+    <table class="id="table" table-hover" data-toggle="table" data-search="true"  >
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Pseudo</th>
-                <th>Roles</th>
-                <th>Mot de passe</th>
-                <th>Visualiser</th>
+                <th data-sortable="true" data-field="Id">Id</th>
+                <th data-sortable="true" data-field="Pseudo">Pseudo</th>
+                <th data-sortable="true" data-field="Roles">Roles</th>
+                <th data-sortable="true" data-field="Mot de passe">Mot de passe</th>
+                <th >Visualiser</th>
                 <th>Editer</th>
             </tr>
         </thead>
@@ -39,7 +39,7 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+    </table><br>
 
 
 <div class="d-flex justify-content-center">
