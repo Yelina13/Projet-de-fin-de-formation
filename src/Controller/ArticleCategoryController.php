@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\ArticleCategory;
 use App\Form\ArticleCategoryType;
 use App\Repository\ArticleCategoryRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,19 @@ class ArticleCategoryController extends AbstractController
     /**
      * @Route("/", name="app_article_category_index", methods={"GET"})
      */
-    public function index(ArticleCategoryRepository $articleCategoryRepository): Response
+    public function index(ArticleCategoryRepository $articleCategoryRepository,PaginatorInterface $paginator, Request $request): Response
     {
+
+        $data = $articleCategoryRepository->findall();
+
+        $article_categories = $paginator->paginate(
+        $data,
+        $request->query->getInt('page',1),
+        10
+        );
+
         return $this->render('article_category/index.html.twig', [
-            'article_categories' => $articleCategoryRepository->findAll(),
+            'article_categories' => $article_categories,
         ]);
     }
 

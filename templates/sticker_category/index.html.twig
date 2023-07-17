@@ -37,7 +37,10 @@
         </tbody>
     </table>
 
-   
+      <div class="d-flex justify-content-center">
+{% do sticker_categories.setPageRange(3) %}
+{{knp_pagination_render(sticker_categories, 'Utils/Pagination.html.twig')}}
+</div>
 
    
 {% endblock %}

@@ -39,6 +39,10 @@
         </tbody>
     </table>
 
-    
+          <div class="d-flex justify-content-center">
+{% do todolists.setPageRange(3) %}
+{{knp_pagination_render(todolists, 'Utils/Pagination.html.twig')}}
+</div>
+
 
 {% endblock %}

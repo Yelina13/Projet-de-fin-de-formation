@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\StickerCategory;
 use App\Form\StickerCategoryType;
 use App\Repository\StickerCategoryRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,18 @@ class StickerCategoryController extends AbstractController
     /**
      * @Route("/", name="app_sticker_category_index", methods={"GET"})
      */
-    public function index(StickerCategoryRepository $stickerCategoryRepository): Response
+    public function index(StickerCategoryRepository $stickerCategoryRepository,PaginatorInterface $paginator, Request $request): Response
     {
+
+        $data = $stickerCategoryRepository->findall();
+
+        $sticker_categories = $paginator->paginate(
+        $data,
+        $request->query->getInt('page',1),
+        10
+        );
         return $this->render('sticker_category/index.html.twig', [
-            'sticker_categories' => $stickerCategoryRepository->findAll(),
+            'sticker_categories' => $sticker_categories,
         ]);
     }
 
