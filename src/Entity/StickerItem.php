@@ -20,11 +20,13 @@ class StickerItem
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"get_new_sticker"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Groups({"get_new_sticker"})
      */
     private $name;
 
