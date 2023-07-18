@@ -14,6 +14,7 @@ class TodolistType extends AbstractType
         $builder
             ->add('name')
             ->add('make')
+            ->add('listing')
         ;
     }
 

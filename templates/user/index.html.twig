@@ -3,7 +3,7 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index <a class="btn btn-success" href="{{ path('app_user_new') }}">Create new</a></h1>
+    <h1>Liste des utilisateurs<a class="btn btn-success" href="{{ path('app_user_new') }}">Créer</a></h1>
 
     {% for message in app.flashes('info') %}
     <div class="alert alert-success">
