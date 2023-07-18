@@ -69,7 +69,7 @@ class TodolistController extends AbstractController
  *
  * @Route("/api/todolist/edit/{id}", name="api_todolist_update", methods={"PUT"}) 
  */
-public function updateMovie(
+public function updateTodolist(
     Request $request,
     TodolistRepository $tr,
     SerializerInterface $serializer,
@@ -83,7 +83,7 @@ public function updateMovie(
 
     // Si la todolist n'est pas trouvé, retourner une erreur
     if (!$todolist) {
-        return $this->json(['error' => 'todolit not found'], Response::HTTP_NOT_FOUND);
+        return $this->json(['error' => 'todolist not found'], Response::HTTP_NOT_FOUND);
     }
 
     // Désérialiser les données JSON et les assigner au todolit existant

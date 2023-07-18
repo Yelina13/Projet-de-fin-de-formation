@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Todolist;
 use App\Form\TodolistType;
 use App\Repository\TodolistRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,18 @@ class TodolistController extends AbstractController
     /**
      * @Route("/", name="app_todolist_index", methods={"GET"})
      */
-    public function index(TodolistRepository $todolistRepository): Response
+    public function index(TodolistRepository $todolistRepository,PaginatorInterface $paginator, Request $request): Response
     {
+
+        $data = $todolistRepository->findall();
+
+        $todolists = $paginator->paginate(
+        $data,
+        $request->query->getInt('page',1),
+        10
+        );
         return $this->render('todolist/index.html.twig', [
-            'todolists' => $todolistRepository->findAll(),
+            'todolists' => $todolists,
         ]);
     }
 

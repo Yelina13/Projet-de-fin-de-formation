@@ -38,5 +38,8 @@
         </tbody>
     </table>
 
-
+    <div class="d-flex justify-content-center">
+{% do article_categories.setPageRange(3) %}
+{{knp_pagination_render(article_categories, 'Utils/Pagination.html.twig')}}
+</div>
 {% endblock %}

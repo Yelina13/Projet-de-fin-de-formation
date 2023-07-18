@@ -28,7 +28,6 @@ class StickerController extends AbstractController
             $data,
             $request->query->getInt('page',1),
             10
-
             );
 
         return $this->render('sticker/index.html.twig', [
