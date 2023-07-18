@@ -14,22 +14,28 @@
 {% endfor %}
 
 
-<table class="table table-hover  justify-align-center" >
+    <table class="id" "table-hover" data-toggle="table" data-search="true"  >
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Utilisateur</th>
-            <th>Objets</th>
-            <th>Lieux</th>
+           
+            <th data-sortable="true" data-field="id">Id</th>
+            <th data-sortable="true" data-field="Utilisateur">Utilisateur</th>
+            <th data-sortable="true" data-field="Objets">Objets</th>
+            <th data-sortable="true" data-field="Lieux">Lieux</th>
             <th>Visualiser</th>
             <th>Editer</th>
+            <th>Supprimer</th>
+    
+            
+
 
         </tr>
     </thead>
-    <tbody >
+    <tbody  >
         {% for sticker in stickers %}
             <tr>
-                <td>{{ sticker.id }}</td>
+          
+                <td style="width:3%;">{{ sticker.id }}</td>
                 <td>{{ sticker.craft }}</td>
                 <td>
                     {% for item in sticker.contains %}
@@ -37,18 +43,24 @@
                     {% endfor %}
                 </td>
                 <td>
-                        {{ sticker.isabout }}
+                    {{ sticker.isabout }}
                 </td>
-               <td>
+               <td style="width:3%;">
                  <a  href="{{ path('app_sticker_show', {'id': sticker.id}) }}"><i class="bi bi-eye-fill" style="font-size: 2rem; color: green" ></i></a>
                  </td>
-                <td>
+                <td style="width:3%;">
                  <a  href="{{ path('app_sticker_edit', {'id': sticker.id}) }}"><i class="bi bi-pencil-square " style="font-size: 2rem; color: green"></i></a>
+                </td>
+                <td style="width:3%;">
+                <form method="post" action="{{ path('app_sticker_delete', {'id': sticker.id}) }}" onsubmit="return confirm('Souhaitez vous vraiment supprimer cette étiquette ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sticker.id) }}">
+                <button class="btn"><a  href="{{ path('app_sticker_edit', {'id': sticker.id}) }}"><i class="bi bi-trash " style="font-size: 2rem; color: green"></i></a></button>
+                </form>
                 </td>
            </tr>
         {% endfor %}
     </tbody>
-</table>
+</table><br>
 
 <div class="d-flex justify-content-center">
 {% do stickers.setPageRange(3) %}
