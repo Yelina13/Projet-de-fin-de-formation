@@ -33,7 +33,6 @@ class StickerCategory
      * mise en place de la cascade car sinon on ne peut pas supprimer une categorie etiquette !
      * 
      * @ORM\OneToMany(targetEntity=Sticker::class, mappedBy="is_about", cascade={"remove"}) 
-     * @Groups({"get_sticker"})
      */
     private $stickers;
 

@@ -43,7 +43,7 @@ class UserController extends AbstractController
 /**
  * API de modification d'un user existant
  *                         
- * @Route("/api/user/edit/{id<\d+>}", name="api_user_update", methods={"PATCH"}) 
+ * @Route("/api/user/edit/{id<\d+>}", name="api_user_update", methods={"PUT"}) 
  */
 public function updateUser(
     Request $request,
@@ -77,7 +77,9 @@ public function updateUser(
 
     // On écrase le mot de passe en clair par le mot de passe haché
     $user->setPassword($hashedPassword);
-
+    
+    // cette fonction a été mis car comparé aux autres Controller d'Api avec le edit , ici sans cette fonction cela n'enregistre pas dans la BDD
+    
     $ur->update($user,true); // fonction crée dans le UserRepository ( même si le $ur->add($user,true) fonctionne )
 
     return $this->json(
@@ -86,7 +88,7 @@ public function updateUser(
         [
             'Location' => $this->generateUrl('api_user', ['id' => $user->getId()])
         ],
-        ['groups' => 'get_user']
+        ['groups' => 'get_user',]
     );
 }
     /**

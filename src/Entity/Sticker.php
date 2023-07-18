@@ -37,13 +37,13 @@ class Sticker
 
     /**
      * @ORM\ManyToOne(targetEntity=StickerCategory::class, inversedBy="stickers", cascade={"persist"})
-     * @Groups({"get_new_sticker", "get_userAll"})
+     * @Groups({"get_new_sticker","get_sticker", "get_userAll"})
      */
     private $is_about;
 
     /**
      * @ORM\ManyToMany(targetEntity=StickerItem::class, inversedBy="stickers", cascade={"persist"})
-     * @Groups({"get_new_sticker", "get_userAll"})
+     * @Groups({"get_new_sticker","get_sticker", "get_userAll"})
      */
     private $contains;
 
