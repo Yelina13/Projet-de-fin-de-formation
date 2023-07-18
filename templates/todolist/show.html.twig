@@ -3,7 +3,7 @@
 {% block title %}Todolist{% endblock %}
 
 {% block body %}
-    <h1>Todolist</h1>
+    <h1>Todolists</h1>
 
    
  <table class="table">
@@ -25,9 +25,11 @@
     </tbody>
 </table>
 
-    <a href="{{ path('app_todolist_index') }}"class="btn btn-primary mb-2">back to list</a>
+    <a href="{{ path('app_todolist_index') }}"class="btn btn-primary mb-2">Retourner à la liste</a>
 
-    <a href="{{ path('app_todolist_edit', {'id': todolist.id}) }}"class="btn btn-primary mb-2">edit</a>
+    <br>
+
+    <a href="{{ path('app_todolist_edit', {'id': todolist.id}) }}"class="btn btn-primary mb-2">Editer</a>
 
     {{ include('todolist/_delete_form.html.twig') }}
 {% endblock %}

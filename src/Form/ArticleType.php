@@ -17,11 +17,17 @@ class ArticleType extends AbstractType
             ->add('title',TextType::class,[
                 'label' => 'Titre',
                 'attr' => [
-                    'placeholder' => 'saisir un titre',
+                    'placeholder' => 'Saisir un titre',
                 ],
             ])
-            ->add('overview')
-            ->add('content')
+            ->add('overview',TextType::class,[
+                'label' => 'Aperçu',
+               
+            ])
+            ->add('content',TextType::class,[
+                'label' => 'Contenu',
+            
+            ])
             ->add('published_date', DateType::class, [
                 'label' => 'Cet article a été publié le',
                 'placeholder' => 'Selectionner une valeur',
@@ -33,8 +39,16 @@ class ArticleType extends AbstractType
                
                 'years' => range(date('Y'), 1950),
             ])
-            ->add('is_from')
-            ->add('publish')
+            ->add('is_from',TextType::class,[
+                'label' => 'Cet article est de',
+                'attr' => [
+                    'placeholder' => 'Saisir le nom de l\'auteur',
+                ],
+            ])
+            ->add('publish',TextType::class,[
+                'label' => ' Cet article est publié par',
+            
+            ])
         ;
     }
 

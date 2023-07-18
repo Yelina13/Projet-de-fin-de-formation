@@ -3,11 +3,11 @@
 {% block title %}Edit Todolist{% endblock %}
 
 {% block body %}
-    <h1>Edit Todolist</h1>
+    <h1>Editer une Todolist</h1>
 
-    {{ include('todolist/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('todolist/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_todolist_index') }}"class="btn btn-primary mb-2">back to list</a>
+    <a href="{{ path('app_todolist_index') }}"class="btn btn-primary mb-2">Retourner à la liste</a>
 
     {{ include('todolist/_delete_form.html.twig') }}
 {% endblock %}
