@@ -36,7 +36,7 @@ class UserController extends AbstractController
             // Avec la réponse
             [],
             // Groupes a envoyer avec la réponse
-            ['groups' => ['get_user']]
+            ['groups' => ['get_userAll']]
         );
     }
 

@@ -23,7 +23,7 @@ class Todolist
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"get_todolist", "get_new_todolist"})
+     * @Groups({"get_todolist", "get_new_todolist", "get_userAll"})
      * @Assert\NotBlank 
      */
     private $name;
@@ -36,7 +36,7 @@ class Todolist
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Groups({"get_todolist" , "get_new_todolist"})
+     * @Groups({"get_todolist" , "get_new_todolist", "get_userAll"})
      * @Assert\NotBlank
      */
     private $listing;

@@ -29,7 +29,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Groups({"get_article", "get_todolist", "get_sticker", "get_user"})
+     * @Groups({"get_article", "get_todolist", "get_sticker", "get_user", "get_userAll"})
      * @Assert\NotBlank
      */
     private $username;
@@ -53,16 +53,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="publish", cascade={"remove"})
+     * @Groups({"get_userAll"})
      */
     private $articles;
 
     /**
      * @ORM\OneToMany(targetEntity=Todolist::class, mappedBy="make",  cascade={"remove"})
+     * @Groups({"get_userAll"})
      */
     private $todolists;
 
     /**
      * @ORM\OneToMany(targetEntity=Sticker::class, mappedBy="craft", cascade={"remove"},)
+     * @Groups({"get_userAll"})
      */
     private $stickers;
 

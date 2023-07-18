@@ -25,7 +25,7 @@ class StickerCategory
 
     /**
      * @ORM\Column(type="string", length=64)
-     * @Groups({"get_sticker", "get_new_sticker"})
+     * @Groups({"get_sticker", "get_new_sticker", "get_userAll"})
      */
     private $name;
 
