@@ -36,15 +36,14 @@ class UserController extends AbstractController
             // Avec la réponse
             [],
             // Groupes a envoyer avec la réponse
-            ['groups' => ['get_userAll']]
+            ['groups' => ['get_user','get_userAll']]
         );
     }
 
-    /**
+/**
  * API de modification d'un user existant
- * Method = POST, données post encodées json dans le corps de la Requete
- *
- * @Route("/api/user/edit/{id}", name="api_user_update", methods={"PUT"}) 
+ *                         
+ * @Route("/api/user/edit/{id<\d+>}", name="api_user_update", methods={"PATCH"}) 
  */
 public function updateUser(
     Request $request,
@@ -64,7 +63,6 @@ public function updateUser(
         return $this->json(['error' => 'user not found'], Response::HTTP_NOT_FOUND);
     }
 
-    // Désérialiser les données JSON et les assigner au todolit existant
     $user = $serializer->deserialize($jsonContent, User::class, 'json', ['object_to_populate' => $user]);
 
     // Valider l'entité avec notre validation
@@ -74,11 +72,13 @@ public function updateUser(
         return $this->json($errors, Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
+    // Hacher le mot de passe
     $hashedPassword = $userPasswordHasher->hashPassword($user, $user->getPassword());
 
     // On écrase le mot de passe en clair par le mot de passe haché
     $user->setPassword($hashedPassword);
 
+    $ur->update($user,true); // fonction crée dans le UserRepository ( même si le $ur->add($user,true) fonctionne )
 
     return $this->json(
         $user,
@@ -89,7 +89,6 @@ public function updateUser(
         ['groups' => 'get_user']
     );
 }
-
     /**
      * API pour créer une user dont les données ont été fournies en 'POST'
      * Method = POST, données post encodées json dans le corps de la Requette
@@ -121,7 +120,6 @@ public function updateUser(
         // On écrase le mot de passe en clair par le mot de passe haché
         $user->setPassword($hashedPassword);
 
-    
 
          $tr->add($user,true);
 
