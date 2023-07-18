@@ -23,12 +23,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"get_user"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Groups({"get_article", "get_todolist", "get_sticker"})
+     * @Groups({"get_article", "get_todolist", "get_sticker", "get_user"})
      * @Assert\NotBlank
      */
     private $username;
@@ -42,6 +43,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\NotBlank
+     * @Groups({"get_user"})
      */
     private $password;
 

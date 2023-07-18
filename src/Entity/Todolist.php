@@ -24,7 +24,7 @@ class Todolist
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"get_todolist", "get_new_todolist"})
-     * @Assert\NotBlank
+     * @Assert\NotBlank 
      */
     private $name;
 
