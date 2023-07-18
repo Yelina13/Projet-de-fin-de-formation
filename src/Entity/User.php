@@ -28,7 +28,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Groups({"get_article", "get_todolist"})
+     * @Groups({"get_article", "get_todolist", "get_sticker"})
      * @Assert\NotBlank
      */
     private $username;

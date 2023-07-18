@@ -174,7 +174,7 @@ public function updateTodolist(
             // La liste des todolits à sérialiser
             $todolist,
             // Code de retour HTTP
-            202,
+            200,
             // Tableau des headers complémentaires à envoyer 
             // Avec la réponse
             [],

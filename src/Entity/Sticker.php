@@ -21,21 +21,29 @@ class Sticker
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"get_sticker", "get_new_sticker"})
      */
     private $id;
 
+ 
+    //  @Groups({"get_new_sticker"}) SI on met pour craft , il affiche dans imsominia le statut "null" , voir
+    //                               si on le remet ou pas .
+
+
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="stickers")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="stickers", cascade={"persist"})
      */
     private $craft;
 
     /**
-     * @ORM\ManyToOne(targetEntity=StickerCategory::class, inversedBy="stickers")
+     * @ORM\ManyToOne(targetEntity=StickerCategory::class, inversedBy="stickers", cascade={"persist"})
+     * @Groups({"get_new_sticker"})
      */
     private $is_about;
 
     /**
-     * @ORM\ManyToMany(targetEntity=StickerItem::class, inversedBy="stickers")
+     * @ORM\ManyToMany(targetEntity=StickerItem::class, inversedBy="stickers", cascade={"persist"})
+     * @Groups({"get_new_sticker"})
      */
     private $contains;
 
