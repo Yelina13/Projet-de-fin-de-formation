@@ -55,10 +55,10 @@ public function updateUser(
 ): Response {
     $jsonContent = $request->getContent();
 
-    // Vérifie si la todolist existe en utilisant son ID
+    // Vérifie si le user existe en utilisant son ID
     $user = $ur->find($id);
 
-    // Si la todolist n'est pas trouvé, retourner une erreur
+    // Si le user n'est pas trouvé, retourner une erreur
     if (!$user) {
         return $this->json(['error' => 'user not found'], Response::HTTP_NOT_FOUND);
     }
@@ -77,7 +77,7 @@ public function updateUser(
         $user,
         Response::HTTP_OK,
         [
-            'Location' => $this->generateUrl('api_todolists', ['id' => $user->getId()])
+            'Location' => $this->generateUrl('api_user', ['id' => $user->getId()])
         ],
         ['groups' => 'get_user']
     );
