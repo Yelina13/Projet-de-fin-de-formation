@@ -43,7 +43,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\NotBlank
-     * @Groups({"get_user"})
+     * @Groups({"get_user"})  // avec ou sans "get_userAll ?"
      */
     private $password;
 
@@ -53,13 +53,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="publish", cascade={"remove"})
-     * @Groups({"get_userAll"})
+     * @Groups({"get_userAll"}) // avec ou sans "get_userAll ?" car on ne veut pas que l'utilisateur fait des articles ?
      */
     private $articles;
 
     /**
      * @ORM\OneToMany(targetEntity=Todolist::class, mappedBy="make",  cascade={"remove"})
-     * @Groups({"get_userAll"})
+     * @Groups({"get_userAll"}) 
      */
     private $todolists;
 
@@ -71,6 +71,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_user"})  // avec ou sans "get_userAll ?"
      */
     private $email;
 

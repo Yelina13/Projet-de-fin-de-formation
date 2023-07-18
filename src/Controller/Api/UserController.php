@@ -51,7 +51,8 @@ public function updateUser(
     UserRepository $ur,
     SerializerInterface $serializer,
     ValidatorInterface $validator,
-    $id
+    UserPasswordHasherInterface $userPasswordHasher,
+    int $id
 ): Response {
     $jsonContent = $request->getContent();
 
@@ -73,6 +74,12 @@ public function updateUser(
         return $this->json($errors, Response::HTTP_UNPROCESSABLE_ENTITY);
     }
 
+    $hashedPassword = $userPasswordHasher->hashPassword($user, $user->getPassword());
+
+    // On écrase le mot de passe en clair par le mot de passe haché
+    $user->setPassword($hashedPassword);
+
+
     return $this->json(
         $user,
         Response::HTTP_OK,
@@ -84,7 +91,7 @@ public function updateUser(
 }
 
     /**
-     * API pour créer une todolist dont les données ont été fournies en 'POST'
+     * API pour créer une user dont les données ont été fournies en 'POST'
      * Method = POST, données post encodées json dans le corps de la Requette
      * 
      * @Route("/api/user/new", name="api_user_new", methods={"POST"}) 
@@ -141,7 +148,7 @@ public function updateUser(
      * 
      * @Route("/api/user/delete/{id<\d+>}", name="api_user_post", methods={"DELETE"})
      */
-    public function removeUser(UserRepository $ur,$id): Response
+    public function removeUser(UserRepository $ur,int $id): Response
 
         {
 
@@ -152,7 +159,7 @@ public function updateUser(
         $ur->remove($user, true);
 
         return $this->json(
-            // La liste des todolits à sérialiser
+        
             $user,
             // Code de retour HTTP
             200,
