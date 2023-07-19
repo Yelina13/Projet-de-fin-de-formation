@@ -101,7 +101,7 @@ public function updateTodolist(
         $todolist,
         Response::HTTP_OK,
         [
-            'Location' => $this->generateUrl('api_todolists', ['id' => $todolist->getId()])
+          'Location' => $this->generateUrl('api_todolists', ['id' => $todolist->getId()])
         ],
         ['groups' => 'get_todolist']
     );

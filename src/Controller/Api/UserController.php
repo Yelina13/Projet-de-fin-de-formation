@@ -17,6 +17,8 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class UserController extends AbstractController
 {
     
+   
+
       /**
      * API de récupération d'une seul user 
      * Method = GET, pas de paramètre
@@ -42,7 +44,7 @@ class UserController extends AbstractController
 
 /**
  * API de modification d'un user existant
- *                         
+ *
  * @Route("/api/user/edit/{id<\d+>}", name="api_user_update", methods={"PUT"}) 
  */
 public function updateUser(
