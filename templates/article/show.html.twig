@@ -30,11 +30,11 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_article_index') }}"class="btn btn-primary mb-2">Retourner à la liste</a>
+    <a href="{{ path('app_article_edit', {'id': article.id}) }}"class="btn btn-success mb-2">Editer</a>
 
-    <br>
+      <br>
 
-    <a href="{{ path('app_article_edit', {'id': article.id}) }}"class="btn btn-primary mb-2">Editer</a>
+     <a href="{{ path('app_article_index') }}"class="btn btn-primary mb-2">Retourner à la liste</a>
 
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}
