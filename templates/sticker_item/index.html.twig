@@ -3,7 +3,9 @@
 {% block title %}StickerItem index{% endblock %}
 
 {% block body %}
-    <h1>Liste des objets d'étiquettes <a class="btn btn-success" href="{{ path('app_sticker_item_new') }}">Créer</a></h1>
+
+    <h1>Liste des objets des étiquettes <a class="btn btn-success" href="{{ path('app_sticker_item_new') }}">Créer</a></h1>
+
 
     {% for message in app.flashes('info') %}
     <div class="alert alert-success">

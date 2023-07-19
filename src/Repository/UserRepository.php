@@ -32,6 +32,17 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             $this->getEntityManager()->flush();
         }
     }
+    
+    // pour la function add , ça fonctione ; mais la nouvelle function avec update est plus logique syntaxiquement (Larousse)
+
+    public function update(User $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
 
     public function remove(User $entity, bool $flush = false): void
     {

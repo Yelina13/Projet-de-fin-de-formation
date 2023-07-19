@@ -23,12 +23,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"get_user"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Groups({"get_article", "get_todolist", "get_sticker"})
+     * @Groups({"get_article", "get_todolist", "get_sticker", "get_user", "get_userAll"})
      * @Assert\NotBlank
      */
     private $username;
@@ -42,6 +43,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      * @Assert\NotBlank
+     * @Groups({"get_user"})  // avec ou sans "get_userAll ?"
      */
     private $password;
 
@@ -51,21 +53,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="publish", cascade={"remove"})
+     * @Groups({"get_userAll"}) // avec ou sans "get_userAll ?" car on ne veut pas que l'utilisateur fait des articles ?
      */
     private $articles;
 
     /**
      * @ORM\OneToMany(targetEntity=Todolist::class, mappedBy="make",  cascade={"remove"})
+     * @Groups({"get_userAll"}) 
      */
     private $todolists;
 
     /**
      * @ORM\OneToMany(targetEntity=Sticker::class, mappedBy="craft", cascade={"remove"},)
+     * @Groups({"get_userAll"})
      */
     private $stickers;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_user"})  // avec ou sans "get_userAll ?"
      */
     private $email;
 

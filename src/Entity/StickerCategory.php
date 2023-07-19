@@ -25,7 +25,7 @@ class StickerCategory
 
     /**
      * @ORM\Column(type="string", length=64)
-     * @Groups({"get_sticker", "get_new_sticker"})
+     * @Groups({"get_sticker", "get_new_sticker", "get_userAll"})
      */
     private $name;
 
@@ -33,7 +33,6 @@ class StickerCategory
      * mise en place de la cascade car sinon on ne peut pas supprimer une categorie etiquette !
      * 
      * @ORM\OneToMany(targetEntity=Sticker::class, mappedBy="is_about", cascade={"remove"}) 
-     * @Groups({"get_sticker"})
      */
     private $stickers;
 
