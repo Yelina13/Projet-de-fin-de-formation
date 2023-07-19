@@ -18,11 +18,11 @@
         </tbody>
     </table>
 
+    <a href="{{ path('app_article_category_edit', {'id': article_category.id}) }}"class="btn btn-success mb-2">Editer</a>
+
+    <br>
+
     <a href="{{ path('app_article_category_index') }}"class="btn btn-primary mb-2">Retourner à la liste</a>
-
-<br>
-
-    <a href="{{ path('app_article_category_edit', {'id': article_category.id}) }}"class="btn btn-primary mb-2">Editer</a>
 
     {{ include('article_category/_delete_form.html.twig') }}
 {% endblock %}
