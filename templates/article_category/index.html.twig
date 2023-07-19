@@ -3,7 +3,7 @@
 {% block title %}ArticleCategory index{% endblock %}
 
 {% block body %}
-    <h1>Liste des catégories d'articles  <a class="btn btn-success" href="{{ path('app_article_category_new') }}">Créer</a></h1>
+    <h1>Liste des catégories d'articles <a class="btn btn-success" href="{{ path('app_article_category_new') }}">Créer</a></h1>
 
     {% for message in app.flashes('info') %}
 <div class="alert alert-success">
