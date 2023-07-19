@@ -3,7 +3,9 @@
 {% block title %}StickerItem index{% endblock %}
 
 {% block body %}
+
     <h1>Liste des objets des étiquettes <a class="btn btn-success" href="{{ path('app_sticker_item_new') }}">Créer</a></h1>
+
 
     {% for message in app.flashes('info') %}
     <div class="alert alert-success">
@@ -16,7 +18,7 @@
         <thead>
             <tr>
                 <th data-sortable="true" data-field="Id">Id</th>
-                <th data-sortable="true" data-field="Nom de l'object">Nom de l'object</th>
+                <th data-sortable="true" data-field="Nom de l'object">Nom de l'objet</th>
                 <th>Visualiser</th>
                 <th>Editer</th>
                 <th>Supprimer</th>

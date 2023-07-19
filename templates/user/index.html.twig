@@ -18,7 +18,6 @@
                 <th data-sortable="true" data-field="Id">Id</th>
                 <th data-sortable="true" data-field="Pseudo">Pseudo</th>
                 <th data-sortable="true" data-field="Roles">Roles</th>
-                <th data-sortable="true" data-field="Mot de passe">Mot de passe</th>
                 <th >Visualiser</th>
                 <th>Editer</th>
                 <th>Supprimer</th>
@@ -31,7 +30,7 @@
                 <td style="width:3%;">{{ user.id }}</td>
                 <td>{{ user.username }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                <td>{{ user.password }}</td>
+               
                 <td style="width:3%;">
                     <a  href="{{ path('app_user_show', {'id': user.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
                 </td>
