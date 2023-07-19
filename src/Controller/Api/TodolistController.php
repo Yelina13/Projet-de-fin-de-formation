@@ -23,7 +23,7 @@ class TodolistController extends AbstractController
      * 
      * @Route("/api/todolists", name="api_todolists", methods={"GET"})
      */
-    public function articles(TodolistRepository $tr): Response
+    public function todolists(TodolistRepository $tr): Response
     {
         $TodolistList = $tr->findAll();
 
@@ -46,7 +46,7 @@ class TodolistController extends AbstractController
      *
      * @Route("/api/todolist/{id<\d+>}", name="api_todolist", methods={"GET"})
      */
-    public function todolist (TodolistRepository $tr, int $id): Response
+    public function todolist(TodolistRepository $tr, int $id): Response
     {
         $Todolist = $tr->find($id);
 
@@ -113,7 +113,7 @@ public function updateTodolist(
      * 
      * @Route("/api/todolist/new", name="api_todolist_new", methods={"POST"}) 
      */
-    public function ajouterTodolist (
+    public function addTodolist (
         Request $request, 
         SerializerInterface $serializer,
         ValidatorInterface $validator,
@@ -159,7 +159,7 @@ public function updateTodolist(
      * 
      * @Route("/api/todolist/delete/{id<\d+>}", name="api_todolist_post", methods={"DELETE"})
      */
-    public function supprimerTodolist(TodolistRepository $tr,$id): Response
+    public function removeTodolist(TodolistRepository $tr,$id): Response
 
         {
 
