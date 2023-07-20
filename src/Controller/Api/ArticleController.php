@@ -36,7 +36,7 @@ class ArticleController extends AbstractController
     }
 
 
-      /**
+    /**
      * API de récupération d'un seul article
      * Method = GET, pas de paramètre
      *
