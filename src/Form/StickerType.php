@@ -3,7 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Sticker;
+use App\Entity\StickerCategory;
 use App\Entity\StickerItem;
+use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,8 +16,16 @@ class StickerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('craft')
-            ->add('is_about')
+            ->add('craft', EntityType::class, [
+                'class' => User::class,
+                'label' => 'Sticker créé par',
+                'placeholder' => 'Sélectionner un auteur'
+            ])
+            ->add('is_about', EntityType::class, [
+                'class' => StickerCategory::class,
+                'label' => 'Sticker de la catégorie',
+                'placeholder' => 'Sélectionner une catégorie'
+            ])
             ->add('contains',EntityType::class,[
                 'class' => StickerItem::class,
                 'choice_label' => 'name',

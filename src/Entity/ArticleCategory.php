@@ -29,7 +29,7 @@ class ArticleCategory
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="is_from")
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="is_from", cascade={"remove"})
      */
     private $articles;
 

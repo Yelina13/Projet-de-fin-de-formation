@@ -3,6 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Article;
+use App\Entity\ArticleCategory;
+use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -30,7 +33,7 @@ class ArticleType extends AbstractType
             ])
             ->add('published_date', DateType::class, [
                 'label' => 'Cet article a été publié le',
-                'placeholder' => 'Selectionner une valeur',
+                'placeholder' => 'Sélectionner une valeur',
 
                 'format' => 'dd MM yyyy',
                 // la propriété published_date de notre entité est de type DateTime
@@ -39,15 +42,16 @@ class ArticleType extends AbstractType
                
                 'years' => range(date('Y'), 1950),
             ])
-            ->add('is_from',TextType::class,[
-                'label' => 'Cet article est de',
-                'attr' => [
-                    'placeholder' => 'Saisir le nom de l\'auteur',
-                ],
-            ])
-            ->add('publish',TextType::class,[
-                'label' => ' Cet article est publié par',
             
+            ->add('is_from', EntityType::class, [
+                'class' => ArticleCategory::class,
+                'label' => ' Cet article est la catégorie',
+                'placeholder' => 'Sélectionner une catégorie',
+            ])
+            ->add('publish',EntityType::class,[
+                'class' => User::class,
+                'label' => ' Cet article est publié par',
+                'placeholder' => 'Sélectionner un auteur'
             ])
         ;
     }
