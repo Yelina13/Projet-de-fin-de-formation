@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\User;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -34,6 +35,7 @@ class ArticleController extends AbstractController
             'articles' => $articles,
         ]);
     }
+
 
     /**
      * @Route("/new", name="app_article_new", methods={"GET", "POST"})

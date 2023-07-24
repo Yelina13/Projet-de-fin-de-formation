@@ -23,6 +23,131 @@
                 <th>Mot de passe</th>
                 <td>{{ user.password }}</td>
             </tr>
+            <tr>
+                <th>Articles rédigés par l'utilisateur</th>
+                <td>
+                <table class="id" "table-hover" data-toggle="table" data-search="true"  >
+        <thead>
+            <tr>
+                <th data-sortable="true" data-field="id">Id</th>
+                <th data-sortable="true" data-field="Titre">Titre</th>
+                <th>Image</th>
+                <th data-sortable="true" data-field="Résumé">Résumé</th>
+                <th data-sortable="true" data-field="Publié">Publié le</th>
+                <th data-sortable="true" data-field="Mis à jour">Mis à jour le</th>
+                <th>Visualiser</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in user.articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td><img src="{{ article.image }}"></td>
+                <td>{{ article.overview }}</td>
+                <td>{{ article.publishedDate ? article.publishedDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.updatedDate ? article.updatedDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td style="width:3%;">
+                    <a  href="{{ path('app_article_show', {'id': article.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
+                </td>
+                <td style="width:3%;">    
+                    <a  href="{{ path('app_article_edit', {'id': article.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+                </td>
+                 <td style="width:3%;">
+                <form method="post" action="{{ path('app_article_delete', {'id': article.id}) }}" onsubmit="return confirm('Souhaitez vous vraiment supprimer cette article ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}">
+                <button class="btn"><a  href="{{ path('app_article_edit', {'id': article.id}) }}"><i class="bi bi-trash " style="font-size: 2rem; color: green"></i></a></button>
+                </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            </td>
+            </tr>
+            <tr>
+                <th>Todolist créées par l'utilisateur</th>
+                <td>
+                <table class="id" "table-hover" data-toggle="table" data-search="true"  >
+        <thead>
+            <tr>
+                <th data-sortable="true" data-field="id">Id</th>
+                <th data-sortable="true" data-field="Nom de la Todolist">Nom de la Todolist</th>
+                <th>Visualiser</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for todolist in user.todolists %}
+            <tr>
+                <td style="width:3%;">{{ todolist.id }}</td>
+                <td>{{ todolist.name }}</td>
+                <td style="width:3%;">
+                    <a  href="{{ path('app_todolist_show', {'id': todolist.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
+                </td>
+                <td style="width:3%;">    
+                    <a  href="{{ path('app_todolist_edit', {'id': todolist.id}) }}"><i class="bi bi-pencil-square" style="font-size: 2rem; color: green"></i></a>
+                </td>
+                  <td style="width:3%;">
+                 <form method="post" action="{{ path('app_todolist_delete', {'id': todolist.id}) }}" onsubmit="return confirm('Souhaitez vous vraiment supprimer cette todolist ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ todolist.id) }}">
+                <button class="btn"><a  href="{{ path('app_todolist_edit', {'id': todolist.id}) }}"><i class="bi bi-trash " style="font-size: 2rem; color: green"></i></a></button>
+                </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+                 </table> <br></td>
+            </tr>
+            <tr>
+                <th>Etiquettes créées</th>
+                <td><thead>
+        <tr>
+           
+            <th data-sortable="true" data-field="id">Id</th>
+            <th data-sortable="true" data-field="Objets">Objets</th>
+            <th data-sortable="true" data-field="Lieux">Lieux</th>
+            <th>Visualiser</th>
+            <th>Editer</th>
+            <th>Supprimer</th>
+    
+            
+
+
+        </tr>
+    </thead>
+    <tbody  >
+        {% for sticker in user.stickers %}
+            <tr>
+          
+                <td style="width:3%;">{{ sticker.id }}</td>
+                <td>
+                    {% for item in sticker.contains %}
+                        {{ item }}
+                    {% endfor %}
+                </td>
+                <td>
+                    {{ sticker.isabout }}
+                </td>
+               <td style="width:3%;">
+                 <a  href="{{ path('app_sticker_show', {'id': sticker.id}) }}"><i class="bi bi-eye-fill" style="font-size: 2rem; color: green" ></i></a>
+                 </td>
+                <td style="width:3%;">
+                 <a  href="{{ path('app_sticker_edit', {'id': sticker.id}) }}"><i class="bi bi-pencil-square " style="font-size: 2rem; color: green"></i></a>
+                </td>
+                <td style="width:3%;">
+                <form method="post" action="{{ path('app_sticker_delete', {'id': sticker.id}) }}" onsubmit="return confirm('Souhaitez vous vraiment supprimer cette étiquette ?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sticker.id) }}">
+                <button class="btn"><a  href="{{ path('app_sticker_edit', {'id': sticker.id}) }}"><i class="bi bi-trash " style="font-size: 2rem; color: green"></i></a></button>
+                </form>
+                </td>
+           </tr>
+        {% endfor %}
+    </tbody></td>
+            </tr>
         </tbody>
     </table>
 

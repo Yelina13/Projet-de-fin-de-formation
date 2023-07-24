@@ -16,10 +16,11 @@
             <tr>
                 <th data-sortable="true" data-field="id">Id</th>
                 <th data-sortable="true" data-field="Titre">Titre</th>
+                <th>Image</th>
                 <th data-sortable="true" data-field="utilisateur">Utilisateur</th>
                 <th data-sortable="true" data-field="Résumé">Résumé</th>
-                <th data-sortable="true" data-field="Publié">Publié </th>
-                <th data-sortable="true" data-field="Mis à jour">Mis à jour</th>
+                <th data-sortable="true" data-field="Publié">Publié le</th>
+                <th data-sortable="true" data-field="Mis à jour">Mis à jour le</th>
                 <th>Visualiser</th>
                 <th>Editer</th>
                 <th>Supprimer</th>
@@ -30,6 +31,7 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.title }}</td>
+                <td><img src="{{ article.image }}"></td>
                 <td>{{ article.publish }}</td>
                 <td>{{ article.overview }}</td>
                 <td>{{ article.publishedDate ? article.publishedDate|date('Y-m-d H:i:s') : '' }}</td>
