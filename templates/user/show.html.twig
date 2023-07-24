@@ -27,6 +27,7 @@
                 <th>Articles rédigés par l'utilisateur</th>
                 <td>
                 <table class="id" "table-hover" data-toggle="table" data-search="true"  >
+            </tr>
         <thead>
             <tr>
                 <th data-sortable="true" data-field="id">Id</th>
@@ -104,22 +105,24 @@
             </tr>
             <tr>
                 <th>Etiquettes créées</th>
-                <td><thead>
-        <tr>
-           
-            <th data-sortable="true" data-field="id">Id</th>
-            <th data-sortable="true" data-field="Objets">Objets</th>
-            <th data-sortable="true" data-field="Lieux">Lieux</th>
-            <th>Visualiser</th>
-            <th>Editer</th>
-            <th>Supprimer</th>
-    
+                <td>
+                <table class="id" "table-hover" data-toggle="table" data-search="true"  >
+            <thead>
+            <tr>
             
+                <th data-sortable="true" data-field="id">Id</th>
+                <th data-sortable="true" data-field="Objets">Objets</th>
+                <th data-sortable="true" data-field="Lieux">Lieux</th>
+                <th>Visualiser</th>
+                <th>Editer</th>
+                <th>Supprimer</th>
+        
+                
 
 
-        </tr>
-    </thead>
-    <tbody  >
+            </tr>
+            </thead>
+    <tbody>
         {% for sticker in user.stickers %}
             <tr>
           
@@ -149,7 +152,7 @@
     </tbody></td>
             </tr>
         </tbody>
-    </table>
+    </table><br>
 
     <a href="{{ path('app_user_edit', {'id': user.id}) }}"class="btn btn-success mb-2">Editer</a>
 
