@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20230717115455 extends AbstractMigration
+final class Version20230724115736 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,7 +20,7 @@ final class Version20230717115455 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('CREATE TABLE article (id INT AUTO_INCREMENT NOT NULL, is_from_id INT DEFAULT NULL, publish_id INT DEFAULT NULL, title VARCHAR(64) NOT NULL, overview VARCHAR(255) NOT NULL, content LONGTEXT NOT NULL, published_date DATETIME NOT NULL, INDEX IDX_23A0E666EF25FC3 (is_from_id), INDEX IDX_23A0E668734ED60 (publish_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE article (id INT AUTO_INCREMENT NOT NULL, is_from_id INT DEFAULT NULL, publish_id INT DEFAULT NULL, title VARCHAR(64) NOT NULL, overview VARCHAR(255) NOT NULL, content LONGTEXT NOT NULL, published_date DATETIME NOT NULL, image VARCHAR(255) NOT NULL, updated_date DATETIME NOT NULL, INDEX IDX_23A0E666EF25FC3 (is_from_id), INDEX IDX_23A0E668734ED60 (publish_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE article_category (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(64) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE sticker (id INT AUTO_INCREMENT NOT NULL, craft_id INT DEFAULT NULL, is_about_id INT DEFAULT NULL, INDEX IDX_8FEDBCFDE836CCC8 (craft_id), INDEX IDX_8FEDBCFD452EAD5D (is_about_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE sticker_sticker_item (sticker_id INT NOT NULL, sticker_item_id INT NOT NULL, INDEX IDX_35BD04B14D965A4D (sticker_id), INDEX IDX_35BD04B17CF0B873 (sticker_item_id), PRIMARY KEY(sticker_id, sticker_item_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
