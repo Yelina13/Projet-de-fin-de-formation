@@ -44,6 +44,11 @@ CREATE TABLE `article_category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `article_category` (`id`, `name`) VALUES
+(1,	'Logistique'),
+(2,	'Emballage'),
+(3,	'Mode de vie'),
+(4,	'Autre');
 
 DROP TABLE IF EXISTS `doctrine_migration_versions`;
 CREATE TABLE `doctrine_migration_versions` (
@@ -53,6 +58,8 @@ CREATE TABLE `doctrine_migration_versions` (
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
+('DoctrineMigrations\\Version20230724115736',	'2023-07-24 13:57:43',	172);
 
 DROP TABLE IF EXISTS `messenger_messages`;
 CREATE TABLE `messenger_messages` (
@@ -82,6 +89,22 @@ CREATE TABLE `sticker` (
   CONSTRAINT `FK_8FEDBCFDE836CCC8` FOREIGN KEY (`craft_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `sticker` (`id`, `craft_id`, `is_about_id`) VALUES
+(4,	5,	8),
+(6,	19,	1),
+(8,	6,	6),
+(9,	23,	12),
+(10,	27,	10),
+(11,	4,	10),
+(13,	7,	5),
+(14,	24,	2),
+(19,	11,	12),
+(20,	19,	21),
+(21,	25,	11),
+(22,	14,	11),
+(23,	25,	2),
+(24,	11,	11),
+(25,	8,	1);
 
 DROP TABLE IF EXISTS `sticker_category`;
 CREATE TABLE `sticker_category` (
@@ -90,6 +113,19 @@ CREATE TABLE `sticker_category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `sticker_category` (`id`, `name`) VALUES
+(1,	'Cuisine'),
+(2,	'Salon'),
+(3,	'Salle à manger'),
+(4,	'Salle de bain'),
+(5,	'Toilettes'),
+(6,	'Buanderie'),
+(8,	'Dressing'),
+(9,	'Chambre'),
+(10,	'Chambre 2'),
+(11,	'Chambre 3'),
+(12,	'Chambre 4'),
+(21,	'Garage');
 
 DROP TABLE IF EXISTS `sticker_item`;
 CREATE TABLE `sticker_item` (
@@ -98,6 +134,32 @@ CREATE TABLE `sticker_item` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `sticker_item` (`id`, `name`) VALUES
+(1,	'Couverts'),
+(2,	'Vaisselle'),
+(3,	'Verres'),
+(4,	'Torchon'),
+(5,	'Serviettes'),
+(6,	'Casseroles'),
+(7,	'Produits ménagers'),
+(8,	'Epices'),
+(9,	'Epicerie sèche'),
+(10,	'Vêtements'),
+(11,	'Linge de lit'),
+(12,	'Produits de beauté'),
+(13,	'Livres'),
+(14,	'Films'),
+(15,	'Bibelots'),
+(16,	'Informatique'),
+(17,	'Câbles'),
+(18,	'Bouteilles'),
+(19,	'Animaux'),
+(20,	'Documents'),
+(21,	'Pharmacie'),
+(22,	'Vrac'),
+(23,	'Disques'),
+(24,	'Jouets'),
+(25,	'Jeux de société');
 
 DROP TABLE IF EXISTS `sticker_sticker_item`;
 CREATE TABLE `sticker_sticker_item` (
@@ -110,6 +172,22 @@ CREATE TABLE `sticker_sticker_item` (
   CONSTRAINT `FK_35BD04B17CF0B873` FOREIGN KEY (`sticker_item_id`) REFERENCES `sticker_item` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `sticker_sticker_item` (`sticker_id`, `sticker_item_id`) VALUES
+(4,	21),
+(6,	25),
+(8,	3),
+(9,	16),
+(10,	20),
+(11,	15),
+(13,	11),
+(14,	16),
+(19,	6),
+(20,	11),
+(21,	24),
+(22,	4),
+(23,	7),
+(24,	10),
+(25,	11);
 
 DROP TABLE IF EXISTS `todolist`;
 CREATE TABLE `todolist` (
@@ -122,6 +200,15 @@ CREATE TABLE `todolist` (
   CONSTRAINT `FK_DD4DF6DBCFBF73EB` FOREIGN KEY (`make_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `todolist` (`id`, `make_id`, `name`, `listing`) VALUES
+(26,	17,	'Demdemdéo',	'Manger des frites'),
+(27,	17,	'Demdemdéo',	'Se laver les mains'),
+(28,	17,	'Demdemdéo',	'Faire les cartons'),
+(29,	17,	'Demdemdéo',	'Appeler les voisins'),
+(30,	13,	'DemAoût',	'Appeler les copains'),
+(31,	13,	'DemAoût',	'Démarrer le barbecue'),
+(32,	13,	'DemAoût',	'Faire la surprise qu\'ils sont en fait là pour porter les meubles'),
+(33,	13,	'DemAoût',	'Se faire d\'autres amis');
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -134,5 +221,33 @@ CREATE TABLE `user` (
   UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `user` (`id`, `username`, `roles`, `password`, `email`) VALUES
+(1,	'admin',	'[\"ROLE_ADMIN\"]',	'$2y$13$G9e/G8Uj5ulyjIhjpgH89e8Ly4gVGqB5CJJPMpZTQ4KCB7sxW7exG',	'admin@admin.com'),
+(2,	'user',	'[\"ROLE_USER\"]',	'$2y$13$ODCQMuHDk52ESeCTcUPqHeYLKmtMhnmgDlPUbKIhY36j6/MEqYhlq',	'user@user.com'),
+(3,	'Alex',	'[\"ROLE_USER\"]',	'$2y$13$1bMFj/JPFOA4YaVk0vfy8e6LvSGJodLc23Lyi5E2pXguUNcPEhJrO',	'cousin.nathalie@live.com'),
+(4,	'Benjamin',	'[\"ROLE_USER\"]',	'$2y$13$E2spcvgEChpcwMWod.g.Ne86Jgzbz6RGYpbSMJzUly4Z7oOOEExci',	'catherine69@free.fr'),
+(5,	'Henri',	'[\"ROLE_USER\"]',	'$2y$13$aINLVFl.PEXjXJHmFW7SyuHeiNLLtAxHiY8BX6LLVgYDgNuxZtt7u',	'anne.launay@bouygtel.fr'),
+(6,	'Emmanuel',	'[\"ROLE_USER\"]',	'$2y$13$a.tZOKl4g8rKtXcDs9mV1OCOQaEdE8dBVy22XbSFoZlELPWl3kV0C',	'william.martel@sfr.fr'),
+(7,	'Clémence',	'[\"ROLE_USER\"]',	'$2y$13$HwmnyWaDXZhoFnNnRoQPbOxSLZZSEtmKidlDEwOrZ2qOemrfN0Eem',	'alfred27@live.com'),
+(8,	'Roger',	'[\"ROLE_USER\"]',	'$2y$13$SkRgYNulr/AT0cXxTIareOLWETr2AFzHqX7IUwZG8Dcfjm3wHs/KO',	'yves.arnaud@laposte.net'),
+(9,	'Susanne',	'[\"ROLE_USER\"]',	'$2y$13$aN.IfnELN/0Ph62rrKxWM.rZiRj1SeHDo5G6mDUiHVhXrtV0LGIyq',	'gerard43@free.fr'),
+(10,	'Victoire',	'[\"ROLE_USER\"]',	'$2y$13$7BU5sP5gKWVKzCJ8fe3HKuySOXinfePglPgcQT7YfNp3v6.AIQDaO',	'tledoux@voila.fr'),
+(11,	'David',	'[\"ROLE_USER\"]',	'$2y$13$X1GgRyphtOzRbtsOQ2s9NubB/YQnm3KwsXgLv.ISe12pLIyQpiDhm',	'aimee.louis@tiscali.fr'),
+(12,	'Marc',	'[\"ROLE_USER\"]',	'$2y$13$N82W1PdvTxq4/fyyxrrO5edx.2uKORzYhBpm85FKbHKyAqHsZWtKe',	'gautier.suzanne@hotmail.fr'),
+(13,	'Alain',	'[\"ROLE_USER\"]',	'$2y$13$IzJiakbHDqFokqR5jB/y3OqXWPBbs/jNWFLji5M.dibFEDT69EouW',	'aime58@charrier.fr'),
+(14,	'Simone',	'[\"ROLE_USER\"]',	'$2y$13$Z3OAQZGKYhC/oB0Dr3hbJexypSpm3.jKtSxDiyMKYx/6AZxHIlr0i',	'celina.hubert@yahoo.fr'),
+(15,	'Joseph',	'[\"ROLE_USER\"]',	'$2y$13$ps62FRUnCFLxy4b6HU9Lo.xY4qZW02X1K1zuxoEDMn15qfJuInNJ.',	'zoe.valette@jean.com'),
+(16,	'Laure',	'[\"ROLE_USER\"]',	'$2y$13$zKIKdmSDjl5APZbWmH9f5eQbp4S5iwLiH62rzDClWBdwUWFcxJVwG',	'remy.foucher@joseph.fr'),
+(17,	'Audrey',	'[\"ROLE_USER\"]',	'$2y$13$2e4QM4KHEMVeE5I5BxgrdejcdeO8s9HmX6LHVRb12LDcWTjenx5Vq',	'william.delmas@pages.fr'),
+(18,	'Adrien',	'[\"ROLE_USER\"]',	'$2y$13$SHu17PmY3Qk8jgi6HcuHw.OmZOirGIX4B65H2MTD9eCic1IZ82KeS',	'thibault63@rocher.com'),
+(19,	'Édouard',	'[\"ROLE_USER\"]',	'$2y$13$wRmhzjPh7ElBCiyzk4AqKeTP9TtCD.feo5R8qjSLjODGwtaq13IjG',	'baron.martin@yahoo.fr'),
+(20,	'Henriette',	'[\"ROLE_USER\"]',	'$2y$13$wSIiZ0nH2UzoAC1..thpa.bvvFKySulbIsoYLAIkhZmIKU8Baavcq',	'bigot.arthur@live.com'),
+(21,	'Catherine',	'[\"ROLE_USER\"]',	'$2y$13$RD0QL.cofnntAmRaSz8ImOsmr6FETa1Xhfa/vReb/bQeGDIJuk5na',	'aimee65@lopez.com'),
+(22,	'Jacqueline',	'[\"ROLE_USER\"]',	'$2y$13$Lk8YLr80/zmvcvJ5kQZ7Iew9C1nK.YK3kVUQPLsWP1QY811KuRlnu',	'denise54@pelletier.net'),
+(23,	'Manon',	'[\"ROLE_USER\"]',	'$2y$13$PuCvaazVLSPa1YpmdazkouqrVVIDkVnxQDKNNMczaEIiB1MRQQKMK',	'fdelahaye@dbmail.com'),
+(24,	'Gabriel',	'[\"ROLE_USER\"]',	'$2y$13$DCjEYIZ6zxVDi5T9R9N2buENnxg.WD3nlBNpiGVFaqNrHPVRgSOv.',	'suzanne.guibert@sanchez.com'),
+(25,	'Adèle',	'[\"ROLE_USER\"]',	'$2y$13$aRm/B7cVfbeh1lMZDi.ple/XTJuR3pSD8jzVG/QG7Ok.E7U0OvwfO',	'knormand@tiscali.fr'),
+(26,	'Patrick',	'[\"ROLE_USER\"]',	'$2y$13$xLwdCokELNdYzA./riOBJe2Ot8l7xadHcJ4q/V/Ur/1aOARAcSmxS',	'pantoine@noos.fr'),
+(27,	'Thérèse',	'[\"ROLE_USER\"]',	'$2y$13$hA92HHY6YIUWO.8Wpo0vr.1bkMPa/nLACjYrdZuhR/QbYA0.0j4ha',	'lpages@deschamps.org');
 
--- 2023-07-24 12:56:05
+-- 2023-07-24 13:14:06
