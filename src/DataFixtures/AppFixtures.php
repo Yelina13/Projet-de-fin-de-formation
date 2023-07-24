@@ -172,7 +172,9 @@ class AppFixtures extends Fixture
              $article->setTitle($faker->word());
              $article->setOverview($faker->sentence());
              $article->setContent($faker->text(100));
+             $article->setImage('https://picsum.photos/200/200');
              $article->setPublishedDate($faker->dateTime('now'));
+             $article->setUpdatedDate($faker->dateTime('now'));
 
 
             for ($c = 1; $c <= 25; $c++) {

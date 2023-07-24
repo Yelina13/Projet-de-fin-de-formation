@@ -12,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
 class ArticleType extends AbstractType
 {
@@ -32,6 +33,10 @@ class ArticleType extends AbstractType
                 'label' => 'Contenu',
             
             ])
+            ->add('image',UrlType::class,[
+                'label' => 'Adresse de l\'image',
+            
+            ])
             ->add('published_date', DateType::class, [
                 'label' => 'Cet article a été publié le',
                 'placeholder' => 'Sélectionner une valeur',
@@ -43,10 +48,17 @@ class ArticleType extends AbstractType
                
                 'years' => range(date('Y'), 1950),
             ])
+            ->add('updated_date', DateType::class, [
+                'label' => 'Cet article a été mis à jour le',
+                'placeholder' => 'Sélectionner une valeur',
+                'format' => 'dd MM yyyy',
+                'input' => 'datetime',
+                'years' => range(date('Y'), 1950),
+            ])
             
             ->add('is_from', EntityType::class, [
                 'class' => ArticleCategory::class,
-                'label' => ' Cet article est la catégorie',
+                'label' => ' Cet article a comme catégorie',
                 'placeholder' => 'Sélectionner une catégorie',
             ])
             ->add('publish',EntityType::class,[
@@ -54,6 +66,7 @@ class ArticleType extends AbstractType
                 'label' => ' Cet article est publié par',
                 'placeholder' => 'Sélectionner un auteur'
             ])
+            
         ;
     }
 

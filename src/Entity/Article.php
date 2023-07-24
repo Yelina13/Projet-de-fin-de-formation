@@ -58,6 +58,16 @@ class Article
      */
     private $publish;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updated_date;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -131,6 +141,30 @@ class Article
     public function setPublish(?User $publish): self
     {
         $this->publish = $publish;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    public function getUpdatedDate(): ?\DateTimeInterface
+    {
+        return $this->updated_date;
+    }
+
+    public function setUpdatedDate(\DateTimeInterface $updated_date): self
+    {
+        $this->updated_date = $updated_date;
 
         return $this;
     }

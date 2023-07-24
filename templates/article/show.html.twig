@@ -12,20 +12,28 @@
                 <td>{{ article.id }}</td>
             </tr>
             <tr>
-                <th>Title</th>
+                <th>Titre</th>
                 <td>{{ article.title }}</td>
             </tr>
             <tr>
-                <th>Overview</th>
+                <th>Image</th>
+                <td><img src="{{ article.image }}" class="show__image"></td>
+            </tr>
+            <tr>
+                <th>Aperçu</th>
                 <td>{{ article.overview }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>Contenu</th>
                 <td>{{ article.content }}</td>
             </tr>
             <tr>
-                <th>Published_date</th>
+                <th>Date de publication</th>
                 <td>{{ article.publishedDate ? article.publishedDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Dernière mise à jour</th>
+                <td>{{ article.updatedDate ? article.updatedDate|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
