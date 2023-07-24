@@ -31,7 +31,10 @@ class StickerType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true,
                 'expanded' => true,
-               // pour que l'utilisateur puisse choisir plusieurs objets en même temps 
+               // pour que l'utilisateur puisse choisir plusieurs objets en même temps
+               'attr' => [
+                'style' => 'max-height:400px;column-count:3;column-gap:500px;'
+            ],
             ])
             ;}
 
