@@ -18,6 +18,7 @@
                 <th data-sortable="true" data-field="id">Id</th>
                 <th data-sortable="true" data-field="Nom de la Todolist">Nom de la Todolist</th>
                 <th data-sortable="true" data-field="Utilisateur">Utilisateur</th>
+                <th data-sortable="true" data-field="Tâche">Tâche</th>
                 <th>Visualiser</th>
                 <th>Editer</th>
                 <th>Supprimer</th>
@@ -29,6 +30,7 @@
                 <td style="width:3%;">{{ todolist.id }}</td>
                 <td>{{ todolist.name }}</td>
                 <td>{{ todolist.make }}</td>
+                <td>{{ todolist.listing }}</td>
                 <td style="width:3%;">
                     <a  href="{{ path('app_todolist_show', {'id': todolist.id}) }}"><i class="bi bi-eye-fill style" style="font-size: 2rem; color: green"  ></i></a>
                 </td>
