@@ -60,11 +60,13 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_article"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"get_article"})
      */
     private $updated_date;
 
