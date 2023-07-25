@@ -19,13 +19,13 @@ class StickerCategory
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"get_new_sticker"})
+     * @Groups({"get_new_sticker", "get_stickerCategory" })
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=64)
-     * @Groups({"get_sticker", "get_new_sticker", "get_userAll"})
+     * @Groups({"get_sticker", "get_new_sticker", "get_userAll", "get_stickerCategory"})
      */
     private $name;
 
