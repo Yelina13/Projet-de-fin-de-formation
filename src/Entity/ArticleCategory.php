@@ -31,6 +31,7 @@ class ArticleCategory
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="is_from", cascade={"remove"})
+     * @Groups({"get_articleCategory"})
      */
     private $articles;
 
