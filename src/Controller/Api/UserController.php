@@ -17,7 +17,28 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class UserController extends AbstractController
 {
     
-   
+       /**
+     * API de récupération d'une seul user 
+     * Method = GET, pas de paramètre
+     *
+     * @Route("/api/users", name="api_users", methods={"GET"})
+     */
+    public function users (UserRepository $ur): Response
+    {
+        $user = $ur->findAll();
+
+        return $this->json(
+            
+            $user,
+            // Code de retour HTTP
+            200,
+            // Tableau des headers complémentaires à envoyer 
+            // Avec la réponse
+            [],
+            // Groupes a envoyer avec la réponse
+            ['groups' => ['get_user']]
+        );
+    }
 
       /**
      * API de récupération d'une seul user 
