@@ -12,13 +12,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleCategoryController extends AbstractController
 {
     /**
-     * API de récupération de l'ensemble des ArticleCategorys avec le nom de l'auteur et du nom de la categpry rticleCategory 
-     * je rajoute un groupe pour ça ['get_rticleCategorys']
+     * API de récupération de l'ensemble des ArticleCategorys avec le nom de l'auteur et du nom de la categpry articleCategories
+     * je rajoute un groupe pour ça ['get_articleCategories']
      * Method = GET, pas de paramètre
      * 
-     * @Route("/api/articleCategorys", name="api_articleCategorys", methods={"GET"}) 
+     * @Route("/api/articleCategories", name="api_articleCategoriess", methods={"GET"}) 
      */
-    public function articleCategorys(ArticleCategoryRepository $ar): Response
+    public function articleCategoriess(ArticleCategoryRepository $ar): Response
     {
         $articleCategoryList = $ar->findAll();
 
