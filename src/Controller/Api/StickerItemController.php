@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+
 class StickerItemController extends AbstractController
 {
     /**
@@ -17,10 +18,11 @@ class StickerItemController extends AbstractController
      * Method = GET, pas de paramètre
      * 
      * @Route("/api/stickerItems", name="api_stickerItems", methods={"GET"}) 
+     * 
      */
     public function StickerItems(StickerItemRepository $ar): Response
     {
-        $StickerItemList = $ar->findAll();
+        $StickerItemList = $ar->findAllAsc();
 
         return $this->json(
             // La liste des StickerItems à sérialiser

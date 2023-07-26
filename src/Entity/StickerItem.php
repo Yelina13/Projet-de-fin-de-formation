@@ -32,6 +32,7 @@ class StickerItem
 
     /**
      * @ORM\ManyToMany(targetEntity=Sticker::class, mappedBy="contains")
+     * 
      */
     private $stickers;
 

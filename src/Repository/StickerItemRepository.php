@@ -40,6 +40,11 @@ class StickerItemRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAllAsc()
+    {
+        return $this->findBy(array(), array('name' => 'ASC'));
+    }
+
 //    /**
 //     * @return StickerItem[] Returns an array of StickerItem objects
 //     */
