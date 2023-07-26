@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/html/apothéose/projet-05-O-pack-back/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="_css/bootstrap.min.css?v=9.2.27" rel="stylesheet" type="text/css">
+  <link href="_css/nv.d3.min.css?v=9.2.27" rel="stylesheet" type="text/css">
+  <link href="_css/style.css?v=9.2.27" rel="stylesheet" type="text/css">
+  <link href="_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="index.html">/var/www/html/apothéose/projet-05-O-pack-back/src</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Api/ArticleCategoryController.php.html#12">App\Controller\Api\ArticleCategoryController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserType.php.html#13">App\Form\UserType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ChangePasswordFormType.php.html#13">App\Form\ChangePasswordFormType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/RegistrationFormType.php.html#16">App\Form\RegistrationFormType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ResetPasswordRequestFormType.php.html#11">App\Form\ResetPasswordRequestFormType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerCategoryType.php.html#11">App\Form\StickerCategoryType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerItemType.php.html#14">App\Form\StickerItemType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerType.php.html#14">App\Form\StickerType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TodolistType.php.html#13">App\Form\TodolistType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ArticleCategoryRepository.php.html#17">App\Repository\ArticleCategoryRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ArticleCategoryType.php.html#11">App\Form\ArticleCategoryType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ArticleRepository.php.html#17">App\Repository\ArticleRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ResetPasswordRequestRepository.php.html#20">App\Repository\ResetPasswordRequestRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerCategoryRepository.php.html#17">App\Repository\StickerCategoryRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerItemRepository.php.html#18">App\Repository\StickerItemRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerRepository.php.html#17">App\Repository\StickerRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TodolistRepository.php.html#17">App\Repository\TodolistRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#20">App\Repository\UserRepository</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ArticleType.php.html#17">App\Form\ArticleType</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ResetPasswordRequest.php.html#13">App\Entity\ResetPasswordRequest</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/ArticleController.php.html#12">App\Controller\Api\ArticleController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/MainController.php.html#9">App\Controller\MainController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerCategoryController.php.html#12">App\Controller\Api\StickerCategoryController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerController.php.html#17">App\Controller\Api\StickerController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerItemController.php.html#13">App\Controller\Api\StickerItemController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#17">App\Controller\Api\TodolistController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#17">App\Controller\Api\UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#17">App\Controller\ArticleCategoryController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#18">App\Controller\ArticleController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/RegistrationController.php.html#17">App\Controller\RegistrationController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/Provider/OpackProvider.php.html#5">App\DataFixtures\Provider\OpackProvider</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#26">App\Controller\ResetPasswordController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#10">App\Controller\SecurityController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#17">App\Controller\StickerCategoryController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#17">App\Controller\StickerController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#17">App\Controller\StickerItemController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#17">App\Controller\TodolistController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#18">App\Controller\UserController</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/AppFixtures.php.html#19">App\DataFixtures\AppFixtures</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/UserAuthentificator.php.html#18">App\Security\UserAuthentificator</a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#26">App\Controller\ResetPasswordController</a></td><td class="text-right">240</td></tr>
+       <tr><td><a href="DataFixtures/AppFixtures.php.html#19">App\DataFixtures\AppFixtures</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#17">App\Controller\TodolistController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#18">App\Controller\UserController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#17">App\Controller\ArticleCategoryController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#18">App\Controller\ArticleController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#17">App\Controller\StickerCategoryController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#17">App\Controller\StickerController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#17">App\Controller\StickerItemController</a></td><td class="text-right">110</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#20">App\Repository\UserRepository</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#17">App\Controller\Api\UserController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#17">App\Controller\Api\TodolistController</a></td><td class="text-right">72</td></tr>
+       <tr><td><a href="Controller/Api/StickerController.php.html#17">App\Controller\Api\StickerController</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Repository/ResetPasswordRequestRepository.php.html#20">App\Repository\ResetPasswordRequestRepository</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Repository/StickerItemRepository.php.html#18">App\Repository\StickerItemRepository</a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Repository/ArticleCategoryRepository.php.html#17">App\Repository\ArticleCategoryRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/ArticleRepository.php.html#17">App\Repository\ArticleRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/StickerCategoryRepository.php.html#17">App\Repository\StickerCategoryRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/StickerRepository.php.html#17">App\Repository\StickerRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Repository/TodolistRepository.php.html#17">App\Repository\TodolistRepository</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Security/UserAuthentificator.php.html#18">App\Security\UserAuthentificator</a></td><td class="text-right">30</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#10">App\Controller\SecurityController</a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/RegistrationController.php.html#17">App\Controller\RegistrationController</a></td><td class="text-right">12</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Controller/Api/ArticleCategoryController.php.html#21"><abbr title="App\Controller\Api\ArticleCategoryController::articleCategories">articleCategories</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ChangePasswordFormType.php.html#15"><abbr title="App\Form\ChangePasswordFormType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TodolistType.php.html#38"><abbr title="App\Form\TodolistType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/TodolistType.php.html#15"><abbr title="App\Form\TodolistType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerType.php.html#41"><abbr title="App\Form\StickerType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerType.php.html#16"><abbr title="App\Form\StickerType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerItemType.php.html#37"><abbr title="App\Form\StickerItemType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerItemType.php.html#16"><abbr title="App\Form\StickerItemType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerCategoryType.php.html#25"><abbr title="App\Form\StickerCategoryType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/StickerCategoryType.php.html#13"><abbr title="App\Form\StickerCategoryType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ResetPasswordRequestFormType.php.html#27"><abbr title="App\Form\ResetPasswordRequestFormType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ResetPasswordRequestFormType.php.html#13"><abbr title="App\Form\ResetPasswordRequestFormType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/RegistrationFormType.php.html#65"><abbr title="App\Form\RegistrationFormType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/RegistrationFormType.php.html#18"><abbr title="App\Form\RegistrationFormType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ChangePasswordFormType.php.html#47"><abbr title="App\Form\ChangePasswordFormType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ArticleType.php.html#73"><abbr title="App\Form\ArticleType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserType.php.html#54"><abbr title="App\Form\UserType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ArticleType.php.html#19"><abbr title="App\Form\ArticleType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ArticleCategoryType.php.html#24"><abbr title="App\Form\ArticleCategoryType::configureOptions">configureOptions</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/ArticleCategoryType.php.html#13"><abbr title="App\Form\ArticleCategoryType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/User.php.html#273"><abbr title="App\Entity\User::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/StickerItem.php.html#90"><abbr title="App\Entity\StickerItem::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/StickerCategory.php.html#93"><abbr title="App\Entity\StickerCategory::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/Sticker.php.html#109"><abbr title="App\Entity\Sticker::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ResetPasswordRequest.php.html#41"><abbr title="App\Entity\ResetPasswordRequest::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ResetPasswordRequest.php.html#36"><abbr title="App\Entity\ResetPasswordRequest::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ResetPasswordRequest.php.html#30"><abbr title="App\Entity\ResetPasswordRequest::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Entity/ArticleCategory.php.html#90"><abbr title="App\Entity\ArticleCategory::__toString">__toString</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/Provider/OpackProvider.php.html#37"><abbr title="App\DataFixtures\Provider\OpackProvider::articleTitle">articleTitle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/Provider/OpackProvider.php.html#32"><abbr title="App\DataFixtures\Provider\OpackProvider::articleCategory">articleCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/AppFixtures.php.html#65"><abbr title="App\DataFixtures\AppFixtures::load">load</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Form/UserType.php.html#15"><abbr title="App\Form\UserType::buildForm">buildForm</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ArticleCategoryRepository.php.html#19"><abbr title="App\Repository\ArticleCategoryRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/AppFixtures.php.html#27"><abbr title="App\DataFixtures\AppFixtures::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerRepository.php.html#19"><abbr title="App\Repository\StickerRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/UserAuthentificator.php.html#46"><abbr title="App\Security\UserAuthentificator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/UserAuthentificator.php.html#31"><abbr title="App\Security\UserAuthentificator::authenticate">authenticate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/UserAuthentificator.php.html#26"><abbr title="App\Security\UserAuthentificator::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#59"><abbr title="App\Repository\UserRepository::upgradePassword">upgradePassword</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#47"><abbr title="App\Repository\UserRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#38"><abbr title="App\Repository\UserRepository::update">update</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#27"><abbr title="App\Repository\UserRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#22"><abbr title="App\Repository\UserRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TodolistRepository.php.html#33"><abbr title="App\Repository\TodolistRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TodolistRepository.php.html#24"><abbr title="App\Repository\TodolistRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/TodolistRepository.php.html#19"><abbr title="App\Repository\TodolistRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerRepository.php.html#33"><abbr title="App\Repository\StickerRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerRepository.php.html#24"><abbr title="App\Repository\StickerRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerItemRepository.php.html#43"><abbr title="App\Repository\StickerItemRepository::findAllAsc">findAllAsc</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ArticleCategoryRepository.php.html#24"><abbr title="App\Repository\ArticleCategoryRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerItemRepository.php.html#34"><abbr title="App\Repository\StickerItemRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerItemRepository.php.html#25"><abbr title="App\Repository\StickerItemRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerItemRepository.php.html#20"><abbr title="App\Repository\StickerItemRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerCategoryRepository.php.html#33"><abbr title="App\Repository\StickerCategoryRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerCategoryRepository.php.html#24"><abbr title="App\Repository\StickerCategoryRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/StickerCategoryRepository.php.html#19"><abbr title="App\Repository\StickerCategoryRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ResetPasswordRequestRepository.php.html#47"><abbr title="App\Repository\ResetPasswordRequestRepository::createResetPasswordRequest">createResetPasswordRequest</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ResetPasswordRequestRepository.php.html#38"><abbr title="App\Repository\ResetPasswordRequestRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ResetPasswordRequestRepository.php.html#29"><abbr title="App\Repository\ResetPasswordRequestRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ResetPasswordRequestRepository.php.html#24"><abbr title="App\Repository\ResetPasswordRequestRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ArticleRepository.php.html#33"><abbr title="App\Repository\ArticleRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ArticleRepository.php.html#24"><abbr title="App\Repository\ArticleRepository::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ArticleRepository.php.html#19"><abbr title="App\Repository\ArticleRepository::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Repository/ArticleCategoryRepository.php.html#33"><abbr title="App\Repository\ArticleCategoryRepository::remove">remove</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="DataFixtures/AppFixtures.php.html#45"><abbr title="App\DataFixtures\AppFixtures::truncate">truncate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#120"><abbr title="App\Controller\UserController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/ArticleCategoryController.php.html#45"><abbr title="App\Controller\Api\ArticleCategoryController::articleCategory">articleCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#162"><abbr title="App\Controller\Api\TodolistController::removeTodolist">removeTodolist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#66"><abbr title="App\Controller\ArticleController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#43"><abbr title="App\Controller\ArticleController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#23"><abbr title="App\Controller\ArticleController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#96"><abbr title="App\Controller\ArticleCategoryController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#74"><abbr title="App\Controller\ArticleCategoryController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#64"><abbr title="App\Controller\ArticleCategoryController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#41"><abbr title="App\Controller\ArticleCategoryController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#22"><abbr title="App\Controller\ArticleCategoryController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#174"><abbr title="App\Controller\Api\UserController::removeUser">removeUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#123"><abbr title="App\Controller\Api\UserController::addUser">addUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#71"><abbr title="App\Controller\Api\UserController::updateUser">updateUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#49"><abbr title="App\Controller\Api\UserController::user">user</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#26"><abbr title="App\Controller\Api\UserController::users">users</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#116"><abbr title="App\Controller\Api\TodolistController::addTodolist">addTodolist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#98"><abbr title="App\Controller\ArticleController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#72"><abbr title="App\Controller\Api\TodolistController::updateTodolist">updateTodolist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#49"><abbr title="App\Controller\Api\TodolistController::todolist">todolist</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#26"><abbr title="App\Controller\Api\TodolistController::todolists">todolists</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerItemController.php.html#47"><abbr title="App\Controller\Api\StickerItemController::StickerItem">StickerItem</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerItemController.php.html#23"><abbr title="App\Controller\Api\StickerItemController::StickerItems">StickerItems</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerController.php.html#159"><abbr title="App\Controller\Api\StickerController::removeSticker">removeSticker</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerController.php.html#116"><abbr title="App\Controller\Api\StickerController::addSticker">addSticker</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerController.php.html#72"><abbr title="App\Controller\Api\StickerController::updateSticker">updateSticker</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerController.php.html#49"><abbr title="App\Controller\Api\StickerController::sticker">sticker</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerController.php.html#26"><abbr title="App\Controller\Api\StickerController::stickers">stickers</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerCategoryController.php.html#45"><abbr title="App\Controller\Api\StickerCategoryController::StickerCategory">StickerCategory</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/StickerCategoryController.php.html#21"><abbr title="App\Controller\Api\StickerCategoryController::StickerCategories">StickerCategories</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/ArticleController.php.html#45"><abbr title="App\Controller\Api\ArticleController::article">article</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/Api/ArticleController.php.html#21"><abbr title="App\Controller\Api\ArticleController::articles">articles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#76"><abbr title="App\Controller\ArticleController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/MainController.php.html#14"><abbr title="App\Controller\MainController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#90"><abbr title="App\Controller\UserController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#75"><abbr title="App\Controller\StickerController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#80"><abbr title="App\Controller\UserController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#41"><abbr title="App\Controller\UserController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#23"><abbr title="App\Controller\UserController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#99"><abbr title="App\Controller\TodolistController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#75"><abbr title="App\Controller\TodolistController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#65"><abbr title="App\Controller\TodolistController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#40"><abbr title="App\Controller\TodolistController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#22"><abbr title="App\Controller\TodolistController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#95"><abbr title="App\Controller\StickerItemController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#73"><abbr title="App\Controller\StickerItemController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#63"><abbr title="App\Controller\StickerItemController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#40"><abbr title="App\Controller\StickerItemController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#22"><abbr title="App\Controller\StickerItemController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#97"><abbr title="App\Controller\StickerController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#65"><abbr title="App\Controller\StickerController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/RegistrationController.php.html#22"><abbr title="App\Controller\RegistrationController::register">register</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#41"><abbr title="App\Controller\StickerController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#22"><abbr title="App\Controller\StickerController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#95"><abbr title="App\Controller\StickerCategoryController::delete">delete</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#73"><abbr title="App\Controller\StickerCategoryController::edit">edit</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#63"><abbr title="App\Controller\StickerCategoryController::show">show</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#40"><abbr title="App\Controller\StickerCategoryController::new">new</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#22"><abbr title="App\Controller\StickerCategoryController::index">index</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#34"><abbr title="App\Controller\SecurityController::logout">logout</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#15"><abbr title="App\Controller\SecurityController::login">login</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#140"><abbr title="App\Controller\ResetPasswordController::processSendingPasswordResetEmail">processSendingPasswordResetEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#85"><abbr title="App\Controller\ResetPasswordController::reset">reset</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#67"><abbr title="App\Controller\ResetPasswordController::checkEmail">checkEmail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#44"><abbr title="App\Controller\ResetPasswordController::request">request</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#33"><abbr title="App\Controller\ResetPasswordController::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Security/UserAuthentificator.php.html#56"><abbr title="App\Security\UserAuthentificator::getLoginUrl">getLoginUrl</abbr></a></td><td class="text-right">0%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="DataFixtures/AppFixtures.php.html#65"><abbr title="App\DataFixtures\AppFixtures::load">load</abbr></a></td><td class="text-right">132</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#85"><abbr title="App\Controller\ResetPasswordController::reset">reset</abbr></a></td><td class="text-right">42</td></tr>
+       <tr><td><a href="Controller/Api/StickerController.php.html#72"><abbr title="App\Controller\Api\StickerController::updateSticker">updateSticker</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#90"><abbr title="App\Controller\UserController::edit">edit</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#41"><abbr title="App\Controller\UserController::new">new</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#75"><abbr title="App\Controller\TodolistController::edit">edit</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#72"><abbr title="App\Controller\Api\TodolistController::updateTodolist">updateTodolist</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#73"><abbr title="App\Controller\StickerItemController::edit">edit</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#40"><abbr title="App\Controller\StickerItemController::new">new</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#75"><abbr title="App\Controller\StickerController::edit">edit</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#41"><abbr title="App\Controller\StickerController::new">new</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#73"><abbr title="App\Controller\StickerCategoryController::edit">edit</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#40"><abbr title="App\Controller\StickerCategoryController::new">new</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#140"><abbr title="App\Controller\ResetPasswordController::processSendingPasswordResetEmail">processSendingPasswordResetEmail</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#40"><abbr title="App\Controller\TodolistController::new">new</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#44"><abbr title="App\Controller\ResetPasswordController::request">request</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/RegistrationController.php.html#22"><abbr title="App\Controller\RegistrationController::register">register</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#76"><abbr title="App\Controller\ArticleController::edit">edit</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#43"><abbr title="App\Controller\ArticleController::new">new</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#71"><abbr title="App\Controller\Api\UserController::updateUser">updateUser</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#74"><abbr title="App\Controller\ArticleCategoryController::edit">edit</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#41"><abbr title="App\Controller\ArticleCategoryController::new">new</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Controller/ResetPasswordController.php.html#67"><abbr title="App\Controller\ResetPasswordController::checkEmail">checkEmail</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/StickerRepository.php.html#33"><abbr title="App\Repository\StickerRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/StickerCategoryRepository.php.html#33"><abbr title="App\Repository\StickerCategoryRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/StickerItemRepository.php.html#25"><abbr title="App\Repository\StickerItemRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/StickerItemRepository.php.html#34"><abbr title="App\Repository\StickerItemRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/StickerRepository.php.html#24"><abbr title="App\Repository\StickerRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/TodolistRepository.php.html#33"><abbr title="App\Repository\TodolistRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/TodolistRepository.php.html#24"><abbr title="App\Repository\TodolistRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ResetPasswordRequestRepository.php.html#38"><abbr title="App\Repository\ResetPasswordRequestRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#27"><abbr title="App\Repository\UserRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#38"><abbr title="App\Repository\UserRepository::update">update</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#47"><abbr title="App\Repository\UserRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/UserRepository.php.html#59"><abbr title="App\Repository\UserRepository::upgradePassword">upgradePassword</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/StickerCategoryRepository.php.html#24"><abbr title="App\Repository\StickerCategoryRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ArticleCategoryRepository.php.html#24"><abbr title="App\Repository\ArticleCategoryRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ResetPasswordRequestRepository.php.html#29"><abbr title="App\Repository\ResetPasswordRequestRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ArticleRepository.php.html#33"><abbr title="App\Repository\ArticleRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ArticleRepository.php.html#24"><abbr title="App\Repository\ArticleRepository::add">add</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Repository/ArticleCategoryRepository.php.html#33"><abbr title="App\Repository\ArticleCategoryRepository::remove">remove</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/SecurityController.php.html#15"><abbr title="App\Controller\SecurityController::login">login</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/Api/TodolistController.php.html#116"><abbr title="App\Controller\Api\TodolistController::addTodolist">addTodolist</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/UserController.php.html#120"><abbr title="App\Controller\UserController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/Api/UserController.php.html#123"><abbr title="App\Controller\Api\UserController::addUser">addUser</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/TodolistController.php.html#99"><abbr title="App\Controller\TodolistController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/StickerItemController.php.html#95"><abbr title="App\Controller\StickerItemController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/ArticleCategoryController.php.html#96"><abbr title="App\Controller\ArticleCategoryController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/StickerController.php.html#97"><abbr title="App\Controller\StickerController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/ArticleController.php.html#98"><abbr title="App\Controller\ArticleController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Controller/StickerCategoryController.php.html#95"><abbr title="App\Controller\StickerCategoryController::delete">delete</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Security/UserAuthentificator.php.html#46"><abbr title="App\Security\UserAuthentificator::onAuthenticationSuccess">onAuthenticationSuccess</abbr></a></td><td class="text-right">6</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.27</a> using <a href="https://secure.php.net/" target="_top">PHP 7.4.3</a> and <a href="https://phpunit.de/">PHPUnit 9.6.10</a> at Wed Jul 26 21:19:21 UTC 2023.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="_js/jquery.min.js?v=9.2.27" type="text/javascript"></script>
+  <script src="_js/d3.min.js?v=9.2.27" type="text/javascript"></script>
+  <script src="_js/nv.d3.min.js?v=9.2.27" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([40,0,0,0,0,0,0,0,0,0,5,3], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([132,0,0,0,0,0,0,0,0,0,0,76], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,2,"<a href=\"Controller\/Api\/ArticleCategoryController.php.html#12\">App\\Controller\\Api\\ArticleCategoryController<\/a>"],[0,2,"<a href=\"Controller\/Api\/ArticleController.php.html#12\">App\\Controller\\Api\\ArticleController<\/a>"],[0,2,"<a href=\"Controller\/Api\/StickerCategoryController.php.html#12\">App\\Controller\\Api\\StickerCategoryController<\/a>"],[0,7,"<a href=\"Controller\/Api\/StickerController.php.html#17\">App\\Controller\\Api\\StickerController<\/a>"],[0,2,"<a href=\"Controller\/Api\/StickerItemController.php.html#13\">App\\Controller\\Api\\StickerItemController<\/a>"],[0,8,"<a href=\"Controller\/Api\/TodolistController.php.html#17\">App\\Controller\\Api\\TodolistController<\/a>"],[0,8,"<a href=\"Controller\/Api\/UserController.php.html#17\">App\\Controller\\Api\\UserController<\/a>"],[0,10,"<a href=\"Controller\/ArticleCategoryController.php.html#17\">App\\Controller\\ArticleCategoryController<\/a>"],[0,10,"<a href=\"Controller\/ArticleController.php.html#18\">App\\Controller\\ArticleController<\/a>"],[0,1,"<a href=\"Controller\/MainController.php.html#9\">App\\Controller\\MainController<\/a>"],[0,3,"<a href=\"Controller\/RegistrationController.php.html#17\">App\\Controller\\RegistrationController<\/a>"],[0,15,"<a href=\"Controller\/ResetPasswordController.php.html#26\">App\\Controller\\ResetPasswordController<\/a>"],[0,3,"<a href=\"Controller\/SecurityController.php.html#10\">App\\Controller\\SecurityController<\/a>"],[0,10,"<a href=\"Controller\/StickerCategoryController.php.html#17\">App\\Controller\\StickerCategoryController<\/a>"],[0,10,"<a href=\"Controller\/StickerController.php.html#17\">App\\Controller\\StickerController<\/a>"],[0,10,"<a href=\"Controller\/StickerItemController.php.html#17\">App\\Controller\\StickerItemController<\/a>"],[0,10,"<a href=\"Controller\/TodolistController.php.html#17\">App\\Controller\\TodolistController<\/a>"],[0,10,"<a href=\"Controller\/UserController.php.html#18\">App\\Controller\\UserController<\/a>"],[0,13,"<a href=\"DataFixtures\/AppFixtures.php.html#19\">App\\DataFixtures\\AppFixtures<\/a>"],[0,2,"<a href=\"DataFixtures\/Provider\/OpackProvider.php.html#5\">App\\DataFixtures\\Provider\\OpackProvider<\/a>"],[100,17,"<a href=\"Entity\/Article.php.html#15\">App\\Entity\\Article<\/a>"],[93.33333333333333,11,"<a href=\"Entity\/ArticleCategory.php.html#16\">App\\Entity\\ArticleCategory<\/a>"],[0,3,"<a href=\"Entity\/ResetPasswordRequest.php.html#13\">App\\Entity\\ResetPasswordRequest<\/a>"],[93.33333333333333,11,"<a href=\"Entity\/Sticker.php.html#18\">App\\Entity\\Sticker<\/a>"],[93.33333333333333,11,"<a href=\"Entity\/StickerCategory.php.html#16\">App\\Entity\\StickerCategory<\/a>"],[92.85714285714286,10,"<a href=\"Entity\/StickerItem.php.html#17\">App\\Entity\\StickerItem<\/a>"],[100,7,"<a href=\"Entity\/Todolist.php.html#14\">App\\Entity\\Todolist<\/a>"],[97.95918367346938,32,"<a href=\"Entity\/User.php.html#20\">App\\Entity\\User<\/a>"],[0,2,"<a href=\"Form\/ArticleCategoryType.php.html#11\">App\\Form\\ArticleCategoryType<\/a>"],[0,2,"<a href=\"Form\/ArticleType.php.html#17\">App\\Form\\ArticleType<\/a>"],[0,2,"<a href=\"Form\/ChangePasswordFormType.php.html#13\">App\\Form\\ChangePasswordFormType<\/a>"],[0,2,"<a href=\"Form\/RegistrationFormType.php.html#16\">App\\Form\\RegistrationFormType<\/a>"],[0,2,"<a href=\"Form\/ResetPasswordRequestFormType.php.html#11\">App\\Form\\ResetPasswordRequestFormType<\/a>"],[0,2,"<a href=\"Form\/StickerCategoryType.php.html#11\">App\\Form\\StickerCategoryType<\/a>"],[0,2,"<a href=\"Form\/StickerItemType.php.html#14\">App\\Form\\StickerItemType<\/a>"],[0,2,"<a href=\"Form\/StickerType.php.html#14\">App\\Form\\StickerType<\/a>"],[0,2,"<a href=\"Form\/TodolistType.php.html#13\">App\\Form\\TodolistType<\/a>"],[0,2,"<a href=\"Form\/UserType.php.html#13\">App\\Form\\UserType<\/a>"],[100,0,"<a href=\"Kernel.php.html#8\">App\\Kernel<\/a>"],[0,5,"<a href=\"Repository\/ArticleCategoryRepository.php.html#17\">App\\Repository\\ArticleCategoryRepository<\/a>"],[0,5,"<a href=\"Repository\/ArticleRepository.php.html#17\">App\\Repository\\ArticleRepository<\/a>"],[0,6,"<a href=\"Repository\/ResetPasswordRequestRepository.php.html#20\">App\\Repository\\ResetPasswordRequestRepository<\/a>"],[0,5,"<a href=\"Repository\/StickerCategoryRepository.php.html#17\">App\\Repository\\StickerCategoryRepository<\/a>"],[0,6,"<a href=\"Repository\/StickerItemRepository.php.html#18\">App\\Repository\\StickerItemRepository<\/a>"],[0,5,"<a href=\"Repository\/StickerRepository.php.html#17\">App\\Repository\\StickerRepository<\/a>"],[0,5,"<a href=\"Repository\/TodolistRepository.php.html#17\">App\\Repository\\TodolistRepository<\/a>"],[0,9,"<a href=\"Repository\/UserRepository.php.html#20\">App\\Repository\\UserRepository<\/a>"],[0,5,"<a href=\"Security\/UserAuthentificator.php.html#18\">App\\Security\\UserAuthentificator<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Controller\/Api\/ArticleCategoryController.php.html#21\">App\\Controller\\Api\\ArticleCategoryController::articleCategories<\/a>"],[0,1,"<a href=\"Controller\/Api\/ArticleCategoryController.php.html#45\">App\\Controller\\Api\\ArticleCategoryController::articleCategory<\/a>"],[0,1,"<a href=\"Controller\/Api\/ArticleController.php.html#21\">App\\Controller\\Api\\ArticleController::articles<\/a>"],[0,1,"<a href=\"Controller\/Api\/ArticleController.php.html#45\">App\\Controller\\Api\\ArticleController::article<\/a>"],[0,1,"<a href=\"Controller\/Api\/StickerCategoryController.php.html#21\">App\\Controller\\Api\\StickerCategoryController::StickerCategories<\/a>"],[0,1,"<a href=\"Controller\/Api\/StickerCategoryController.php.html#45\">App\\Controller\\Api\\StickerCategoryController::StickerCategory<\/a>"],[0,1,"<a href=\"Controller\/Api\/StickerController.php.html#26\">App\\Controller\\Api\\StickerController::stickers<\/a>"],[0,1,"<a href=\"Controller\/Api\/StickerController.php.html#49\">App\\Controller\\Api\\StickerController::sticker<\/a>"],[0,3,"<a href=\"Controller\/Api\/StickerController.php.html#72\">App\\Controller\\Api\\StickerController::updateSticker<\/a>"],[0,1,"<a href=\"Controller\/Api\/StickerController.php.html#116\">App\\Controller\\Api\\StickerController::addSticker<\/a>"],[0,1,"<a href=\"Controller\/Api\/StickerController.php.html#159\">App\\Controller\\Api\\StickerController::removeSticker<\/a>"],[0,1,"<a href=\"Controller\/Api\/StickerItemController.php.html#23\">App\\Controller\\Api\\StickerItemController::StickerItems<\/a>"],[0,1,"<a href=\"Controller\/Api\/StickerItemController.php.html#47\">App\\Controller\\Api\\StickerItemController::StickerItem<\/a>"],[0,1,"<a href=\"Controller\/Api\/TodolistController.php.html#26\">App\\Controller\\Api\\TodolistController::todolists<\/a>"],[0,1,"<a href=\"Controller\/Api\/TodolistController.php.html#49\">App\\Controller\\Api\\TodolistController::todolist<\/a>"],[0,3,"<a href=\"Controller\/Api\/TodolistController.php.html#72\">App\\Controller\\Api\\TodolistController::updateTodolist<\/a>"],[0,2,"<a href=\"Controller\/Api\/TodolistController.php.html#116\">App\\Controller\\Api\\TodolistController::addTodolist<\/a>"],[0,1,"<a href=\"Controller\/Api\/TodolistController.php.html#162\">App\\Controller\\Api\\TodolistController::removeTodolist<\/a>"],[0,1,"<a href=\"Controller\/Api\/UserController.php.html#26\">App\\Controller\\Api\\UserController::users<\/a>"],[0,1,"<a href=\"Controller\/Api\/UserController.php.html#49\">App\\Controller\\Api\\UserController::user<\/a>"],[0,3,"<a href=\"Controller\/Api\/UserController.php.html#71\">App\\Controller\\Api\\UserController::updateUser<\/a>"],[0,2,"<a href=\"Controller\/Api\/UserController.php.html#123\">App\\Controller\\Api\\UserController::addUser<\/a>"],[0,1,"<a href=\"Controller\/Api\/UserController.php.html#174\">App\\Controller\\Api\\UserController::removeUser<\/a>"],[0,1,"<a href=\"Controller\/ArticleCategoryController.php.html#22\">App\\Controller\\ArticleCategoryController::index<\/a>"],[0,3,"<a href=\"Controller\/ArticleCategoryController.php.html#41\">App\\Controller\\ArticleCategoryController::new<\/a>"],[0,1,"<a href=\"Controller\/ArticleCategoryController.php.html#64\">App\\Controller\\ArticleCategoryController::show<\/a>"],[0,3,"<a href=\"Controller\/ArticleCategoryController.php.html#74\">App\\Controller\\ArticleCategoryController::edit<\/a>"],[0,2,"<a href=\"Controller\/ArticleCategoryController.php.html#96\">App\\Controller\\ArticleCategoryController::delete<\/a>"],[0,1,"<a href=\"Controller\/ArticleController.php.html#23\">App\\Controller\\ArticleController::index<\/a>"],[0,3,"<a href=\"Controller\/ArticleController.php.html#43\">App\\Controller\\ArticleController::new<\/a>"],[0,1,"<a href=\"Controller\/ArticleController.php.html#66\">App\\Controller\\ArticleController::show<\/a>"],[0,3,"<a href=\"Controller\/ArticleController.php.html#76\">App\\Controller\\ArticleController::edit<\/a>"],[0,2,"<a href=\"Controller\/ArticleController.php.html#98\">App\\Controller\\ArticleController::delete<\/a>"],[0,1,"<a href=\"Controller\/MainController.php.html#14\">App\\Controller\\MainController::index<\/a>"],[0,3,"<a href=\"Controller\/RegistrationController.php.html#22\">App\\Controller\\RegistrationController::register<\/a>"],[0,1,"<a href=\"Controller\/ResetPasswordController.php.html#33\">App\\Controller\\ResetPasswordController::__construct<\/a>"],[0,3,"<a href=\"Controller\/ResetPasswordController.php.html#44\">App\\Controller\\ResetPasswordController::request<\/a>"],[0,2,"<a href=\"Controller\/ResetPasswordController.php.html#67\">App\\Controller\\ResetPasswordController::checkEmail<\/a>"],[0,6,"<a href=\"Controller\/ResetPasswordController.php.html#85\">App\\Controller\\ResetPasswordController::reset<\/a>"],[0,3,"<a href=\"Controller\/ResetPasswordController.php.html#140\">App\\Controller\\ResetPasswordController::processSendingPasswordResetEmail<\/a>"],[0,2,"<a href=\"Controller\/SecurityController.php.html#15\">App\\Controller\\SecurityController::login<\/a>"],[0,1,"<a href=\"Controller\/SecurityController.php.html#34\">App\\Controller\\SecurityController::logout<\/a>"],[0,1,"<a href=\"Controller\/StickerCategoryController.php.html#22\">App\\Controller\\StickerCategoryController::index<\/a>"],[0,3,"<a href=\"Controller\/StickerCategoryController.php.html#40\">App\\Controller\\StickerCategoryController::new<\/a>"],[0,1,"<a href=\"Controller\/StickerCategoryController.php.html#63\">App\\Controller\\StickerCategoryController::show<\/a>"],[0,3,"<a href=\"Controller\/StickerCategoryController.php.html#73\">App\\Controller\\StickerCategoryController::edit<\/a>"],[0,2,"<a href=\"Controller\/StickerCategoryController.php.html#95\">App\\Controller\\StickerCategoryController::delete<\/a>"],[0,1,"<a href=\"Controller\/StickerController.php.html#22\">App\\Controller\\StickerController::index<\/a>"],[0,3,"<a href=\"Controller\/StickerController.php.html#41\">App\\Controller\\StickerController::new<\/a>"],[0,1,"<a href=\"Controller\/StickerController.php.html#65\">App\\Controller\\StickerController::show<\/a>"],[0,3,"<a href=\"Controller\/StickerController.php.html#75\">App\\Controller\\StickerController::edit<\/a>"],[0,2,"<a href=\"Controller\/StickerController.php.html#97\">App\\Controller\\StickerController::delete<\/a>"],[0,1,"<a href=\"Controller\/StickerItemController.php.html#22\">App\\Controller\\StickerItemController::index<\/a>"],[0,3,"<a href=\"Controller\/StickerItemController.php.html#40\">App\\Controller\\StickerItemController::new<\/a>"],[0,1,"<a href=\"Controller\/StickerItemController.php.html#63\">App\\Controller\\StickerItemController::show<\/a>"],[0,3,"<a href=\"Controller\/StickerItemController.php.html#73\">App\\Controller\\StickerItemController::edit<\/a>"],[0,2,"<a href=\"Controller\/StickerItemController.php.html#95\">App\\Controller\\StickerItemController::delete<\/a>"],[0,1,"<a href=\"Controller\/TodolistController.php.html#22\">App\\Controller\\TodolistController::index<\/a>"],[0,3,"<a href=\"Controller\/TodolistController.php.html#40\">App\\Controller\\TodolistController::new<\/a>"],[0,1,"<a href=\"Controller\/TodolistController.php.html#65\">App\\Controller\\TodolistController::show<\/a>"],[0,3,"<a href=\"Controller\/TodolistController.php.html#75\">App\\Controller\\TodolistController::edit<\/a>"],[0,2,"<a href=\"Controller\/TodolistController.php.html#99\">App\\Controller\\TodolistController::delete<\/a>"],[0,1,"<a href=\"Controller\/UserController.php.html#23\">App\\Controller\\UserController::index<\/a>"],[0,3,"<a href=\"Controller\/UserController.php.html#41\">App\\Controller\\UserController::new<\/a>"],[0,1,"<a href=\"Controller\/UserController.php.html#80\">App\\Controller\\UserController::show<\/a>"],[0,3,"<a href=\"Controller\/UserController.php.html#90\">App\\Controller\\UserController::edit<\/a>"],[0,2,"<a href=\"Controller\/UserController.php.html#120\">App\\Controller\\UserController::delete<\/a>"],[0,1,"<a href=\"DataFixtures\/AppFixtures.php.html#27\">App\\DataFixtures\\AppFixtures::__construct<\/a>"],[0,1,"<a href=\"DataFixtures\/AppFixtures.php.html#45\">App\\DataFixtures\\AppFixtures::truncate<\/a>"],[0,11,"<a href=\"DataFixtures\/AppFixtures.php.html#65\">App\\DataFixtures\\AppFixtures::load<\/a>"],[0,1,"<a href=\"DataFixtures\/Provider\/OpackProvider.php.html#32\">App\\DataFixtures\\Provider\\OpackProvider::articleCategory<\/a>"],[0,1,"<a href=\"DataFixtures\/Provider\/OpackProvider.php.html#37\">App\\DataFixtures\\Provider\\OpackProvider::articleTitle<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#73\">App\\Entity\\Article::getId<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#78\">App\\Entity\\Article::getTitle<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#83\">App\\Entity\\Article::setTitle<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#90\">App\\Entity\\Article::getOverview<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#95\">App\\Entity\\Article::setOverview<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#102\">App\\Entity\\Article::getContent<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#107\">App\\Entity\\Article::setContent<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#114\">App\\Entity\\Article::getPublishedDate<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#119\">App\\Entity\\Article::setPublishedDate<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#126\">App\\Entity\\Article::getIsFrom<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#131\">App\\Entity\\Article::setIsFrom<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#138\">App\\Entity\\Article::getPublish<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#143\">App\\Entity\\Article::setPublish<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#150\">App\\Entity\\Article::getImage<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#155\">App\\Entity\\Article::setImage<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#162\">App\\Entity\\Article::getUpdatedDate<\/a>"],[100,1,"<a href=\"Entity\/Article.php.html#167\">App\\Entity\\Article::setUpdatedDate<\/a>"],[100,1,"<a href=\"Entity\/ArticleCategory.php.html#38\">App\\Entity\\ArticleCategory::__construct<\/a>"],[100,1,"<a href=\"Entity\/ArticleCategory.php.html#43\">App\\Entity\\ArticleCategory::getId<\/a>"],[100,1,"<a href=\"Entity\/ArticleCategory.php.html#48\">App\\Entity\\ArticleCategory::getName<\/a>"],[100,1,"<a href=\"Entity\/ArticleCategory.php.html#53\">App\\Entity\\ArticleCategory::setName<\/a>"],[100,1,"<a href=\"Entity\/ArticleCategory.php.html#63\">App\\Entity\\ArticleCategory::getArticles<\/a>"],[100,2,"<a href=\"Entity\/ArticleCategory.php.html#68\">App\\Entity\\ArticleCategory::addArticle<\/a>"],[100,3,"<a href=\"Entity\/ArticleCategory.php.html#78\">App\\Entity\\ArticleCategory::removeArticle<\/a>"],[0,1,"<a href=\"Entity\/ArticleCategory.php.html#90\">App\\Entity\\ArticleCategory::__toString<\/a>"],[0,1,"<a href=\"Entity\/ResetPasswordRequest.php.html#30\">App\\Entity\\ResetPasswordRequest::__construct<\/a>"],[0,1,"<a href=\"Entity\/ResetPasswordRequest.php.html#36\">App\\Entity\\ResetPasswordRequest::getId<\/a>"],[0,1,"<a href=\"Entity\/ResetPasswordRequest.php.html#41\">App\\Entity\\ResetPasswordRequest::getUser<\/a>"],[100,1,"<a href=\"Entity\/Sticker.php.html#50\">App\\Entity\\Sticker::__construct<\/a>"],[100,1,"<a href=\"Entity\/Sticker.php.html#55\">App\\Entity\\Sticker::getId<\/a>"],[100,1,"<a href=\"Entity\/Sticker.php.html#60\">App\\Entity\\Sticker::getCraft<\/a>"],[100,1,"<a href=\"Entity\/Sticker.php.html#65\">App\\Entity\\Sticker::setCraft<\/a>"],[100,1,"<a href=\"Entity\/Sticker.php.html#72\">App\\Entity\\Sticker::getIsAbout<\/a>"],[100,1,"<a href=\"Entity\/Sticker.php.html#77\">App\\Entity\\Sticker::setIsAbout<\/a>"],[100,1,"<a href=\"Entity\/Sticker.php.html#87\">App\\Entity\\Sticker::getContains<\/a>"],[100,2,"<a href=\"Entity\/Sticker.php.html#92\">App\\Entity\\Sticker::addContain<\/a>"],[100,1,"<a href=\"Entity\/Sticker.php.html#101\">App\\Entity\\Sticker::removeContain<\/a>"],[0,1,"<a href=\"Entity\/Sticker.php.html#109\">App\\Entity\\Sticker::__toString<\/a>"],[100,1,"<a href=\"Entity\/StickerCategory.php.html#39\">App\\Entity\\StickerCategory::__construct<\/a>"],[100,1,"<a href=\"Entity\/StickerCategory.php.html#44\">App\\Entity\\StickerCategory::getId<\/a>"],[100,1,"<a href=\"Entity\/StickerCategory.php.html#49\">App\\Entity\\StickerCategory::getName<\/a>"],[100,1,"<a href=\"Entity\/StickerCategory.php.html#54\">App\\Entity\\StickerCategory::setName<\/a>"],[100,1,"<a href=\"Entity\/StickerCategory.php.html#64\">App\\Entity\\StickerCategory::getStickers<\/a>"],[100,2,"<a href=\"Entity\/StickerCategory.php.html#69\">App\\Entity\\StickerCategory::addSticker<\/a>"],[100,3,"<a href=\"Entity\/StickerCategory.php.html#79\">App\\Entity\\StickerCategory::removeSticker<\/a>"],[0,1,"<a href=\"Entity\/StickerCategory.php.html#93\">App\\Entity\\StickerCategory::__toString<\/a>"],[100,1,"<a href=\"Entity\/StickerItem.php.html#39\">App\\Entity\\StickerItem::__construct<\/a>"],[100,1,"<a href=\"Entity\/StickerItem.php.html#44\">App\\Entity\\StickerItem::getId<\/a>"],[100,1,"<a href=\"Entity\/StickerItem.php.html#49\">App\\Entity\\StickerItem::getName<\/a>"],[100,1,"<a href=\"Entity\/StickerItem.php.html#54\">App\\Entity\\StickerItem::setName<\/a>"],[100,1,"<a href=\"Entity\/StickerItem.php.html#64\">App\\Entity\\StickerItem::getStickers<\/a>"],[100,2,"<a href=\"Entity\/StickerItem.php.html#69\">App\\Entity\\StickerItem::addSticker<\/a>"],[100,2,"<a href=\"Entity\/StickerItem.php.html#79\">App\\Entity\\StickerItem::removeSticker<\/a>"],[0,1,"<a href=\"Entity\/StickerItem.php.html#90\">App\\Entity\\StickerItem::__toString<\/a>"],[100,1,"<a href=\"Entity\/Todolist.php.html#44\">App\\Entity\\Todolist::getId<\/a>"],[100,1,"<a href=\"Entity\/Todolist.php.html#49\">App\\Entity\\Todolist::getName<\/a>"],[100,1,"<a href=\"Entity\/Todolist.php.html#54\">App\\Entity\\Todolist::setName<\/a>"],[100,1,"<a href=\"Entity\/Todolist.php.html#61\">App\\Entity\\Todolist::getMake<\/a>"],[100,1,"<a href=\"Entity\/Todolist.php.html#66\">App\\Entity\\Todolist::setMake<\/a>"],[100,1,"<a href=\"Entity\/Todolist.php.html#73\">App\\Entity\\Todolist::getListing<\/a>"],[100,1,"<a href=\"Entity\/Todolist.php.html#78\">App\\Entity\\Todolist::setListing<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#78\">App\\Entity\\User::__construct<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#85\">App\\Entity\\User::getId<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#93\">App\\Entity\\User::getUsername<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#98\">App\\Entity\\User::setUsername<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#110\">App\\Entity\\User::getUserIdentifier<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#118\">App\\Entity\\User::getRoles<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#127\">App\\Entity\\User::setRoles<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#137\">App\\Entity\\User::getPassword<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#142\">App\\Entity\\User::setPassword<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#155\">App\\Entity\\User::getSalt<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#163\">App\\Entity\\User::eraseCredentials<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#172\">App\\Entity\\User::getArticles<\/a>"],[100,2,"<a href=\"Entity\/User.php.html#177\">App\\Entity\\User::addArticle<\/a>"],[100,3,"<a href=\"Entity\/User.php.html#187\">App\\Entity\\User::removeArticle<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#202\">App\\Entity\\User::getTodolists<\/a>"],[100,2,"<a href=\"Entity\/User.php.html#207\">App\\Entity\\User::addTodolist<\/a>"],[100,3,"<a href=\"Entity\/User.php.html#217\">App\\Entity\\User::removeTodolist<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#232\">App\\Entity\\User::getStickers<\/a>"],[100,2,"<a href=\"Entity\/User.php.html#237\">App\\Entity\\User::addSticker<\/a>"],[100,3,"<a href=\"Entity\/User.php.html#247\">App\\Entity\\User::removeSticker<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#259\">App\\Entity\\User::getEmail<\/a>"],[100,1,"<a href=\"Entity\/User.php.html#264\">App\\Entity\\User::setEmail<\/a>"],[0,1,"<a href=\"Entity\/User.php.html#273\">App\\Entity\\User::__toString<\/a>"],[0,1,"<a href=\"Form\/ArticleCategoryType.php.html#13\">App\\Form\\ArticleCategoryType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ArticleCategoryType.php.html#24\">App\\Form\\ArticleCategoryType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/ArticleType.php.html#19\">App\\Form\\ArticleType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ArticleType.php.html#73\">App\\Form\\ArticleType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/ChangePasswordFormType.php.html#15\">App\\Form\\ChangePasswordFormType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ChangePasswordFormType.php.html#47\">App\\Form\\ChangePasswordFormType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/RegistrationFormType.php.html#18\">App\\Form\\RegistrationFormType::buildForm<\/a>"],[0,1,"<a href=\"Form\/RegistrationFormType.php.html#65\">App\\Form\\RegistrationFormType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/ResetPasswordRequestFormType.php.html#13\">App\\Form\\ResetPasswordRequestFormType::buildForm<\/a>"],[0,1,"<a href=\"Form\/ResetPasswordRequestFormType.php.html#27\">App\\Form\\ResetPasswordRequestFormType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/StickerCategoryType.php.html#13\">App\\Form\\StickerCategoryType::buildForm<\/a>"],[0,1,"<a href=\"Form\/StickerCategoryType.php.html#25\">App\\Form\\StickerCategoryType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/StickerItemType.php.html#16\">App\\Form\\StickerItemType::buildForm<\/a>"],[0,1,"<a href=\"Form\/StickerItemType.php.html#37\">App\\Form\\StickerItemType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/StickerType.php.html#16\">App\\Form\\StickerType::buildForm<\/a>"],[0,1,"<a href=\"Form\/StickerType.php.html#41\">App\\Form\\StickerType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/TodolistType.php.html#15\">App\\Form\\TodolistType::buildForm<\/a>"],[0,1,"<a href=\"Form\/TodolistType.php.html#38\">App\\Form\\TodolistType::configureOptions<\/a>"],[0,1,"<a href=\"Form\/UserType.php.html#15\">App\\Form\\UserType::buildForm<\/a>"],[0,1,"<a href=\"Form\/UserType.php.html#54\">App\\Form\\UserType::configureOptions<\/a>"],[0,1,"<a href=\"Repository\/ArticleCategoryRepository.php.html#19\">App\\Repository\\ArticleCategoryRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/ArticleCategoryRepository.php.html#24\">App\\Repository\\ArticleCategoryRepository::add<\/a>"],[0,2,"<a href=\"Repository\/ArticleCategoryRepository.php.html#33\">App\\Repository\\ArticleCategoryRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/ArticleRepository.php.html#19\">App\\Repository\\ArticleRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/ArticleRepository.php.html#24\">App\\Repository\\ArticleRepository::add<\/a>"],[0,2,"<a href=\"Repository\/ArticleRepository.php.html#33\">App\\Repository\\ArticleRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/ResetPasswordRequestRepository.php.html#24\">App\\Repository\\ResetPasswordRequestRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/ResetPasswordRequestRepository.php.html#29\">App\\Repository\\ResetPasswordRequestRepository::add<\/a>"],[0,2,"<a href=\"Repository\/ResetPasswordRequestRepository.php.html#38\">App\\Repository\\ResetPasswordRequestRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/ResetPasswordRequestRepository.php.html#47\">App\\Repository\\ResetPasswordRequestRepository::createResetPasswordRequest<\/a>"],[0,1,"<a href=\"Repository\/StickerCategoryRepository.php.html#19\">App\\Repository\\StickerCategoryRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/StickerCategoryRepository.php.html#24\">App\\Repository\\StickerCategoryRepository::add<\/a>"],[0,2,"<a href=\"Repository\/StickerCategoryRepository.php.html#33\">App\\Repository\\StickerCategoryRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/StickerItemRepository.php.html#20\">App\\Repository\\StickerItemRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/StickerItemRepository.php.html#25\">App\\Repository\\StickerItemRepository::add<\/a>"],[0,2,"<a href=\"Repository\/StickerItemRepository.php.html#34\">App\\Repository\\StickerItemRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/StickerItemRepository.php.html#43\">App\\Repository\\StickerItemRepository::findAllAsc<\/a>"],[0,1,"<a href=\"Repository\/StickerRepository.php.html#19\">App\\Repository\\StickerRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/StickerRepository.php.html#24\">App\\Repository\\StickerRepository::add<\/a>"],[0,2,"<a href=\"Repository\/StickerRepository.php.html#33\">App\\Repository\\StickerRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/TodolistRepository.php.html#19\">App\\Repository\\TodolistRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/TodolistRepository.php.html#24\">App\\Repository\\TodolistRepository::add<\/a>"],[0,2,"<a href=\"Repository\/TodolistRepository.php.html#33\">App\\Repository\\TodolistRepository::remove<\/a>"],[0,1,"<a href=\"Repository\/UserRepository.php.html#22\">App\\Repository\\UserRepository::__construct<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#27\">App\\Repository\\UserRepository::add<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#38\">App\\Repository\\UserRepository::update<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#47\">App\\Repository\\UserRepository::remove<\/a>"],[0,2,"<a href=\"Repository\/UserRepository.php.html#59\">App\\Repository\\UserRepository::upgradePassword<\/a>"],[0,1,"<a href=\"Security\/UserAuthentificator.php.html#26\">App\\Security\\UserAuthentificator::__construct<\/a>"],[0,1,"<a href=\"Security\/UserAuthentificator.php.html#31\">App\\Security\\UserAuthentificator::authenticate<\/a>"],[0,2,"<a href=\"Security\/UserAuthentificator.php.html#46\">App\\Security\\UserAuthentificator::onAuthenticationSuccess<\/a>"],[0,1,"<a href=\"Security\/UserAuthentificator.php.html#56\">App\\Security\\UserAuthentificator::getLoginUrl<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
