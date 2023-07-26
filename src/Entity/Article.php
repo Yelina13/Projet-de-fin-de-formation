@@ -48,7 +48,7 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity=ArticleCategory::class, inversedBy="articles")
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $is_from;
 
