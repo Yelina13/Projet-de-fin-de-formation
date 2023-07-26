@@ -16,6 +16,7 @@
             <tr>
                 <th data-sortable="true" data-field="id">Id</th>
                 <th data-sortable="true" data-field="Titre">Titre</th>
+                <th data-sortable="true" data-field="Catégorie">Catégorie</th>
                 <th>Image</th>
                 <th data-sortable="true" data-field="utilisateur">Utilisateur</th>
                 <th data-sortable="true" data-field="Résumé">Résumé</th>
@@ -31,6 +32,7 @@
             <tr>
                 <td>{{ article.id }}</td>
                 <td>{{ article.title }}</td>
+                <td>{{ article.isFrom.name }}</td>
                 <td><img src="{{ article.image }}" style="width:100%"></td>
                 <td>{{ article.publish }}</td>
                 <td>{{ article.overview }}</td>
