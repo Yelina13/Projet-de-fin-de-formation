@@ -24,49 +24,49 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=64)
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $overview;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $published_date;
 
     /**
      * @ORM\ManyToOne(targetEntity=ArticleCategory::class, inversedBy="articles")
-     * @Groups({"get_article", "get_articleCategory"})
+     * @Groups({"get_article"})
      */
     private $is_from;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="articles")
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $publish;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $updated_date;
 
