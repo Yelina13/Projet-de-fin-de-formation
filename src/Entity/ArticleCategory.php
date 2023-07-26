@@ -19,17 +19,19 @@ class ArticleCategory
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"get_articleCategory"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=64)
-     * @Groups({"get_article"})
+     * @Groups({"get_article", "get_articleCategory"})
      */
     private $name;
 
     /**
      * @ORM\OneToMany(targetEntity=Article::class, mappedBy="is_from", cascade={"remove"})
+     * @Groups({"get_articleCategory"})
      */
     private $articles;
 
