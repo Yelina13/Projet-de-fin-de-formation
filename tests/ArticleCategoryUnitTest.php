@@ -52,6 +52,7 @@ class ArticleCategoryUnitTest extends TestCase
         $articleCategory->removeArticle($articles);
         $this->assertEmpty($articleCategory->getArticles());
        
-
     }
+
+  
 }

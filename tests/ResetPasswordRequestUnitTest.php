@@ -1,24 +1,31 @@
 <?php
 
 namespace App\Tests;
-use ResetPasswordRequestTrait;
 use App\Entity\ResetPasswordRequest;
 use PHPUnit\Framework\TestCase;
 
-//class ResetPasswordRequestUnitTest extends TestCase
+class ResetPasswordRequestUnitTest extends TestCase
 
 {
-     // PAS TROUVÉ COMMENT FAIRE À REVOIR POUR LE RESET PASSWORD TEST  
+  public function testConstructorAndGetters()
+  {
+      // Créez un utilisateur fictif (un mock) pour le test
+      $user = $this->createMock(\stdClass::class);
 
-   // public function testIsEmpty()
-   // {
-        
-   // $resetPasswordRequest = new ResetPasswordRequest();
+      // Créez une instance de l'entité avec les arguments nécessaires pour le constructeur
+      $expiresAt = new \DateTimeImmutable('+1 day');
+      $selector = 'selector';
+      $hashedToken = 'hashed_token';
+      $entity = new ResetPasswordRequest($user, $expiresAt, $selector, $hashedToken);
 
-   //  $this->assertEmpty($resetPasswordRequest->getId());
-   // $this->assertEmpty($resetPasswordRequest->getUser());
-
-  //  }
+      // Vérifiez si les valeurs passées dans le constructeur sont correctement assignées aux propriétés
+      $this->assertSame($user, $entity->getUser());
+      
+      // Notez que le type de retour de getUser() est object, donc nous utilisons assertIsObject pour vérifier le type.
+      $this->assertIsObject($entity->getUser());
+      
+      $this->assertEmpty($entity->getId());
+  }
 
  
 }
