@@ -1,4 +1,4 @@
--- Adminer 4.7.6 MySQL dump
+-- Adminer 4.8.1 MySQL 5.5.5-10.3.38-MariaDB-0ubuntu0.20.04.1 dump
 
 SET NAMES utf8;
 SET time_zone = '+00:00';
@@ -12,11 +12,11 @@ CREATE TABLE `article` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `is_from_id` int(11) DEFAULT NULL,
   `publish_id` int(11) DEFAULT NULL,
-  `title` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `overview` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(64) NOT NULL,
+  `overview` varchar(255) NOT NULL,
+  `content` longtext NOT NULL,
   `published_date` datetime NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) NOT NULL,
   `updated_date` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_23A0E666EF25FC3` (`is_from_id`),
@@ -40,7 +40,7 @@ INSERT INTO `article` (`id`, `is_from_id`, `publish_id`, `title`, `overview`, `c
 DROP TABLE IF EXISTS `article_category`;
 CREATE TABLE `article_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -52,7 +52,7 @@ INSERT INTO `article_category` (`id`, `name`) VALUES
 
 DROP TABLE IF EXISTS `doctrine_migration_versions`;
 CREATE TABLE `doctrine_migration_versions` (
-  `version` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
+  `version` varchar(191) NOT NULL,
   `executed_at` datetime DEFAULT NULL,
   `execution_time` int(11) DEFAULT NULL,
   PRIMARY KEY (`version`)
@@ -64,9 +64,9 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 DROP TABLE IF EXISTS `messenger_messages`;
 CREATE TABLE `messenger_messages` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `body` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `headers` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue_name` varchar(190) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` longtext NOT NULL,
+  `headers` longtext NOT NULL,
+  `queue_name` varchar(190) NOT NULL,
   `created_at` datetime NOT NULL,
   `available_at` datetime NOT NULL,
   `delivered_at` datetime DEFAULT NULL,
@@ -109,7 +109,7 @@ INSERT INTO `sticker` (`id`, `craft_id`, `is_about_id`) VALUES
 DROP TABLE IF EXISTS `sticker_category`;
 CREATE TABLE `sticker_category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -130,7 +130,7 @@ INSERT INTO `sticker_category` (`id`, `name`) VALUES
 DROP TABLE IF EXISTS `sticker_item`;
 CREATE TABLE `sticker_item` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -160,37 +160,37 @@ INSERT INTO `sticker_item` (`id`, `name`) VALUES
 (23,	'disques'),
 (24,	'jouets'),
 (25,	'jeux de société'),
-(26, 'bougies'),
-(27, 'ustensiles de cuisine'),
-(28, 'poêles'),
-(29, 'coussins'),
-(30, 'accessoires'),
-(31, 'savon'),
-(32, 'tapis'),
-(33, 'lampes de chevet'),
-(34, 'lampes'),
-(35, 'produits hygéniques'),
-(36,  'décorations'),
-(37, 'planches à découper'),
-(38, 'brosse à dents'),
-(39,  'bols'),
-(40,  'horloges'),
-(41, 'poubelles'),
-(42, 'cafetière'),
-(43, 'oreillers'),
-(44, 'maquillage'),
-(45, 'miroir'),
-(46, 'mixeur'),
-(47, 'sac à dos'),
-(48, 'casques'),
-(49, 'vélo'),
-(50, 'planche à roulette'),
-(51, 'raquette de tennis'),
-(52, 'vases'),
-(53, 'guitares'),
-(54, 'ventilateur'),
-(55, 'rideaux'),
-(56, 'jumelles');
+(26,	'bougies'),
+(27,	'ustensiles de cuisine'),
+(28,	'poêles'),
+(29,	'coussins'),
+(30,	'accessoires'),
+(31,	'savon'),
+(32,	'tapis'),
+(33,	'lampes de chevet'),
+(34,	'lampes'),
+(35,	'produits hygéniques'),
+(36,	'décorations'),
+(37,	'planches à découper'),
+(38,	'brosse à dents'),
+(39,	'bols'),
+(40,	'horloges'),
+(41,	'poubelles'),
+(42,	'cafetière'),
+(43,	'oreillers'),
+(44,	'maquillage'),
+(45,	'miroir'),
+(46,	'mixeur'),
+(47,	'sac à dos'),
+(48,	'casques'),
+(49,	'vélo'),
+(50,	'planche à roulette'),
+(51,	'raquette de tennis'),
+(52,	'vases'),
+(53,	'guitares'),
+(54,	'ventilateur'),
+(55,	'rideaux'),
+(56,	'jumelles');
 
 DROP TABLE IF EXISTS `sticker_sticker_item`;
 CREATE TABLE `sticker_sticker_item` (
@@ -224,8 +224,8 @@ DROP TABLE IF EXISTS `todolist`;
 CREATE TABLE `todolist` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `make_id` int(11) DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `listing` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `listing` longtext DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_DD4DF6DBCFBF73EB` (`make_id`),
   CONSTRAINT `FK_DD4DF6DBCFBF73EB` FOREIGN KEY (`make_id`) REFERENCES `user` (`id`)
@@ -244,12 +244,12 @@ INSERT INTO `todolist` (`id`, `make_id`, `name`, `listing`) VALUES
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `roles` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:json)',
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(180) NOT NULL,
+  `roles` longtext NOT NULL COMMENT '(DC2Type:json)',
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`)
+  UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -282,4 +282,4 @@ INSERT INTO `user` (`id`, `username`, `roles`, `password`, `email`) VALUES
 (26,	'Patrick',	'[\"ROLE_USER\"]',	'$2y$13$xLwdCokELNdYzA./riOBJe2Ot8l7xadHcJ4q/V/Ur/1aOARAcSmxS',	'pantoine@noos.fr'),
 (27,	'Thérèse',	'[\"ROLE_USER\"]',	'$2y$13$hA92HHY6YIUWO.8Wpo0vr.1bkMPa/nLACjYrdZuhR/QbYA0.0j4ha',	'lpages@deschamps.org');
 
--- 2023-07-24 13:14:06
+-- 2023-07-27 11:29:25

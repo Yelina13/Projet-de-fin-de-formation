@@ -17,6 +17,7 @@
             <tr>
                 <th data-sortable="true" data-field="Id">Id</th>
                 <th data-sortable="true" data-field="Pseudo">Pseudo</th>
+                <th data-sortable="true" data-field="Email">Email</th>
                 <th data-sortable="true" data-field="Rôles">Rôles</th>
                 <th >Visualiser</th>
                 <th>Editer</th>
@@ -29,6 +30,7 @@
             <tr>
                 <td style="width:3%;">{{ user.id }}</td>
                 <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                
                 <td style="width:3%;">
