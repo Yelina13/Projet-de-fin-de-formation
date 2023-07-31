@@ -25,7 +25,8 @@ security:
         api:
             pattern:   ^/api
             stateless: true
-            jwt: ~
+            jwt:
+                authenticator: lexik_jwt_authentication.security.jwt_authenticator
 
 
         main:
@@ -46,7 +47,7 @@ security:
         - { path: ^/login, roles: PUBLIC_ACCESS }
         - { path: ^/logout, roles: PUBLIC_ACCESS }
         - { path: ^/reset-password, roles: PUBLIC_ACCESS }
-        - { path: ^/api, roles: PUBLIC_ACCESS }
+        - { path: ^/api, roles: ROLE_USER }
         - { path: ^/(.*)$, roles: ROLE_ADMIN }
         # Les path seront à remanier plustard quand le front aura les API  .
 when@test:
