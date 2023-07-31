@@ -52,22 +52,29 @@ class UserController extends AbstractController
             // On va hacher le mot de passe pour plus de sécurité en mettant dans l'injection de dépendance "UserPasswordHasherInterface $userPasswordHasher"
             // - on lui donne sur la méthode hashPassword, notre $user
             // - et le mot de passe en clair (qui est déjà dans le user !)
+            // Hasing password for more security using the dependency injection
+            // - giving it the method hashPassword, $user
+            // - and clear password already stored in user
             $hashedPassword = $userPasswordHasher->hashPassword($user, $user->getPassword());
 
             // On écrase le mot de passe en clair par le mot de passe haché
+            // Dumping password and replace with hashed one
             $user->setPassword($hashedPassword);
 
             // On arrive ici si le formulaire est soumis (POST)
             // et valide => Respecte les contraintes @ Assert
+            // If form is submitted, we validate, according to constraints
             $userRepository->add($user, true);
 
             $this->addFlash('info','Utilisateur crée avec succès !') ;
 
             // On revient sur la page liste users
+            // Back to user list page
             return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
         // Si pb validation ou 1er affichage
+        // If validation issue or 1st display
         return $this->renderForm('user/new.html.twig', [
             'user' => $user,
             'form' => $form,
@@ -90,6 +97,7 @@ class UserController extends AbstractController
     public function edit(Request $request,User $user,UserRepository $userRepository,UserPasswordHasherInterface $userPasswordHasher): Response
     {
          // On refait la même procédure pour hasher le password comme pour la création de l'user .
+         // Same process than hashing password for user creation
            
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -99,6 +107,7 @@ class UserController extends AbstractController
             $hashedPassword = $userPasswordHasher->hashPassword($user, $user->getPassword());
 
             // On écrase le mot de passe en clair par le mot de passe haché
+            // Dump clear password and replace with hashed one
             $user->setPassword($hashedPassword);
             
             $userRepository->add($user, true);
