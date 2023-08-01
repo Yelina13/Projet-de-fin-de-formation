@@ -17,6 +17,10 @@ class StickerItemController extends AbstractController
      * je rajoute un groupe pour ça ['get_StickerItem']
      * Method = GET, pas de paramètre
      * 
+     * API to get all sticker items with author name and category name
+     * adding group to gather them : ['get_StickerItem']
+     * Method GET without parameter
+     * 
      * @Route("/api/stickerItems", name="api_stickerItems", methods={"GET"}) 
      * 
      */
@@ -26,13 +30,17 @@ class StickerItemController extends AbstractController
 
         return $this->json(
             // La liste des StickerItems à sérialiser
+            // List of items to serialize
             $StickerItemList,
             // Code de retour HTTP
+            // Return HTTP code
             200,
             // Tableau des headers complémentaires à envoyer 
             // Avec la réponse
+            // Array of headers to send with response
             [],
             // Groupes a envoyer avec la réponse
+            // Groups to send with response
             ['groups' => ['get_stickerItem']]
         );
     }
@@ -40,7 +48,10 @@ class StickerItemController extends AbstractController
 
     /**
      * API de récupération d'un seul StickerItem
-     * Method = GET, pas de paramètre
+     * Method = GET, ID de l'item
+     * 
+     * API to get a sticker item
+     * Method GET with item ID
      *
      * @Route("/api/stickerItem/{id<\d+>}", name="api_stickerItem", methods={"GET"}) 
      */
@@ -52,11 +63,14 @@ class StickerItemController extends AbstractController
           
             $StickerItem,
             // Code de retour HTTP
+            // Return HTTP code
             200,
             // Tableau des headers complémentaires à envoyer 
             // Avec la réponse
+            // Array of headers with response to send
             [],
             // Groupes a envoyer avec la réponse
+            // Groups to send with response
             ['groups' => ['get_stickerItem']]
         );
     }

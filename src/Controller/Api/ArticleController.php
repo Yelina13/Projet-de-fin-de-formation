@@ -16,6 +16,10 @@ class ArticleController extends AbstractController
      * je rajoute un groupe pour ça ['get_articles']
      * Method = GET, pas de paramètre
      * 
+     * API to get all articles with author name and category name
+     * adding group to gather them : ['get_articles']
+     * Method GET without parameter
+     * 
      * @Route("/api/articles", name="api_articles", methods={"GET"}) 
      */
     public function articles(ArticleRepository $ar): Response
@@ -24,13 +28,17 @@ class ArticleController extends AbstractController
 
         return $this->json(
             // La liste des articles à sérialiser
+            // list of articles to serialize
             $articleList,
             // Code de retour HTTP
+            // Return code HTTP
             200,
             // Tableau des headers complémentaires à envoyer 
             // Avec la réponse
+            // Array of headers to send with response
             [],
             // Groupes a envoyer avec la réponse
+            // Group to send with response
             ['groups' => ['get_article']]
         );
     }
@@ -38,7 +46,10 @@ class ArticleController extends AbstractController
 
     /**
      * API de récupération d'un seul article
-     * Method = GET, pas de paramètre
+     * Method = GET, ID de l'article
+     * 
+     * API to get an article with author name and category name
+     * Method GET, article ID
      *
      * @Route("/api/article/{id<\d+>}", name="api_article", methods={"GET"}) 
      */
@@ -50,11 +61,14 @@ class ArticleController extends AbstractController
           
             $article,
             // Code de retour HTTP
+            // Return code HTTP
             200,
             // Tableau des headers complémentaires à envoyer 
             // Avec la réponse
+            // Array of headers to send with response
             [],
             // Groupes a envoyer avec la réponse
+            // Group to send with response
             ['groups' => ['get_article']]
         );
     }
