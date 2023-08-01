@@ -6,6 +6,15 @@ use App\Entity\Article;
 use App\Entity\ArticleCategory;
 use PHPUnit\Framework\TestCase;
 
+
+
+
+
+/**
+ * Pour les Tests unitaires , 3 methodes ("testIsTrue vérifie que la condition passée en paramètre est vraie. ,testIsFalse vérifie que la condition passée en paramètre est fausse. et TestIsempty pour vérifier que la valeur est bien vide ")
+ * On utilise pour cela les assertions avec Get et Set pour les Entity 
+ * Dashboard installé avec PhpUnit Coverage, pour avoir un visuel plus structuré de l'avancement des tests .
+ */
 class ArticleCategoryUnitTest extends TestCase
 
 {
