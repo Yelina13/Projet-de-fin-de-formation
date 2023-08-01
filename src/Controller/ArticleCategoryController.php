@@ -21,15 +21,15 @@ class ArticleCategoryController extends AbstractController
      */
     public function index(ArticleCategoryRepository $articleCategoryRepository,PaginatorInterface $paginator, Request $request): Response
     {
-
+        // SQL command to get all datas about article categories
         $data = $articleCategoryRepository->findall();
-
+        // calling paginator and asking him to write 'page' and sort by number
         $article_categories = $paginator->paginate(
         $data,
         $request->query->getInt('page',1),
         10
         );
-
+        // Returning the associated template with datas gathered
         return $this->render('article_category/index.html.twig', [
             'article_categories' => $article_categories,
         ]);

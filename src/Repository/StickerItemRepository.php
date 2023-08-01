@@ -40,6 +40,8 @@ class StickerItemRepository extends ServiceEntityRepository
         }
     }
 
+// Creating a function to sort items by name, asked by frontend, so it's easier to use them in the API
+
     public function findAllAsc()
     {
         return $this->findBy(array(), array('name' => 'ASC'));
