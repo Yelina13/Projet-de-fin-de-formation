@@ -61,7 +61,7 @@
                     <a class="page-link text-white bg-success" href="{{ path(route, query|merge({(pageParameterName): pageCount})) }}">{{ pageCount }}</a>
                 </li>
             {% endif %}
-
+ <!-- Nav -->
             {% if next is defined %}
                 <li class="page-item">
                     <a class="page-link text-white bg-success" rel="next" href="{{ path(route, query|merge({(pageParameterName): next})) }}">&nbsp;&raquo;</a>

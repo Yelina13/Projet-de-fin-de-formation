@@ -12,6 +12,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleCategoryRepository::class)
+ * 2 groupes utilisés pour la récupération des API ("get_article", "get_articleCategory")
+ * Utilisation de "cascade={"remove"})" sur $articles pour pouvoir faire sa suppression
+ * 
+ * 2 groups used to retrieve APIs ("get_article", "get_articleCategory")
+ * Use of "cascade={"remove"})" on $articles to be able to delete it
  */
 class ArticleCategory
 {

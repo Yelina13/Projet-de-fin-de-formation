@@ -14,6 +14,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=StickerRepository::class)
+ * 3 groupes utilisés pour la récupération des API ("get_sticker", "get_new_sticker , "get_userAll"")
+ * $craft= Utilisateur / $is_about = Catégorie de l'article / $contains = Item sticker 
+ * fonction __toString() pour éviter le bug "not converted to string"
+ * 
+ * 3 groups used to retrieve APIs ("get_sticker", "get_new_sticker , "get_userAll"")
+ * $craft= User / $is_about = Item category / $contains = Item sticker 
+ * __toString() function to avoid the "not converted to string" bug
  */
 class Sticker
 {
@@ -26,10 +33,6 @@ class Sticker
     private $id;
 
  
-    //  @Groups({"get_new_sticker"}) SI on met pour craft , il affiche dans imsominia le statut "null" , voir
-    //                               si on le remet ou pas .
-
-
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="stickers", cascade={"persist"})
      */
@@ -105,11 +108,13 @@ class Sticker
         return $this;
     }
 
-
+     
+    /**
+     * fonction magique 
+     */
     public function __toString(): string
     {
-        // Return a string representation of the Sticker object.
-        // You can choose what properties or information to include in the string.
-        return $this->craft ?? ''; // Assuming the Sticker object has a "name" property
+    
+        return $this->craft ?? ''; 
     }
 }

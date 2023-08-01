@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TodolistRepository::class)
+ * 3 groupe ("get_todolist" , "get_new_todolist", "get_userAll")
  */
 class Todolist
 {

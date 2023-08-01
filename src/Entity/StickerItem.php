@@ -13,6 +13,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=StickerItemRepository::class)
+ * 4 groups ("get_new_sticker","get_sticker", "get_userAll", "get_stickerItem") pour les API 
+ * fonction __toString
  */
 class StickerItem
 {
