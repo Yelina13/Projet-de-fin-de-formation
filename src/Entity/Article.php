@@ -11,6 +11,11 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * 2 groupes utilisé pour la récupération des API ("get_article", "get_articleCategory")
+ * $is_from = Utilisateur / $publish = Catégorie de l'article
+ * 
+ * 2 groups for retrieving APIs ("get_article", "get_articleCategory")
+ * $is_from = User / $publish = Article category
  */
 class Article
 {

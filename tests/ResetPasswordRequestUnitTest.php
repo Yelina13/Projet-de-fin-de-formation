@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 class ResetPasswordRequestUnitTest extends TestCase
 
 {
+  
   public function testConstructorAndGetters()
   {
       // Créez un utilisateur fictif (un mock) pour le test

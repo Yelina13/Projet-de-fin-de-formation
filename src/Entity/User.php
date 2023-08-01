@@ -16,6 +16,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
+ * 6 groups ("get_article", "get_todolist", "get_sticker", "get_user", "get_userAll", "get_articleCategory")
+ *  cascade={"remove"}
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {

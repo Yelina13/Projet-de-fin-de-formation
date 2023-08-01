@@ -12,6 +12,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=StickerCategoryRepository::class)
+ * 4 groups ("get_sticker", "get_new_sticker", "get_userAll", "get_stickerCategory") pour les Api
+ * Ajout de la fonction magique to_tring car sinon message d'erreur Object of class App\Entity\UserCategory could not be converted to string
  */
 class StickerCategory
 {
