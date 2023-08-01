@@ -32,7 +32,8 @@ class AppFixtures extends Fixture
     )
     {
         // On récupère la connexion à la BDD (DBAL ~= PDO)
-        // pour exécuter des requêtes manuelles en SQL (est ce qu'il faut laisser ça ???? est ce qu'on sert bien ??)
+        // pour exécuter des requêtes manuelles en SQL 
+        // Connecting to database to send SQL requests
         $this->connection = $connection;
         $this->userPasswordHasher = $userPasswordHasher;
      
@@ -41,13 +42,16 @@ class AppFixtures extends Fixture
 
      /**
      * Permet de TRUNCATE les tables et de remettre les AI à 1
+     * Allowing truncate on tables and auto incrementation starts at 1
      */
     private function truncate()
     {
         // On passe en mode SQL ! On cause avec MySQL
         // Désactivation la vérification des contraintes FK
+        // SQL mod, desactivating foreign keys constrains
         $this->connection->executeQuery('SET foreign_key_checks = 0');
         // On tronque
+        // Truncate
         $this->connection->executeQuery('TRUNCATE TABLE article');
         $this->connection->executeQuery('TRUNCATE TABLE article_category');
         $this->connection->executeQuery('TRUNCATE TABLE sticker');
@@ -66,21 +70,15 @@ class AppFixtures extends Fixture
 
     {
   
-        // on aimerati "reset" les id de nos données à 1
-        // cela est possible avec la commande SQL "TRUNCATE"
-        // la commande de fixtures permet de faire un "--purge-with-truncate"
-        // sauf qu'on ne peut pas gérer les suppressions en CASCADE
-        // donc les contraintes sur les clés étangères s'appliquent et ça ne fonctionne pas
-
-        // on va contourner la chose en créant notre propre TRUNCATE
         $this->truncate();
 
         // on instancie la librairie Faker, en français
+        // Calling the Faker library, in french
         // @see https://fakerphp.github.io/#localization
         $faker = Factory::create('fr_FR');
         // pour générer les mêmes données à chaque fois, on renseigne la "seed"
         // @see https://fakerphp.github.io/#seeding-the-generator
-        // ces chiffres ne correspondent à rien de particulier
+        // A Seed allows multiple people to generate the same "random" data
         $faker->seed(4586731294);
 
 
@@ -94,12 +92,14 @@ class AppFixtures extends Fixture
         // Hashage du password avec l'instance 'UserPasswordHasherInterface'
         // récupérée lors de l'appel au constructeur de la classe avec
         // L'injection de dépendances
+        // Password hash, done with the class constructor
         $admin->setPassword(
             $this->userPasswordHasher->hashPassword($admin, 'admin')
         );
         $manager->persist($admin);
 
         // On crée un user "pratique"
+        // Creating a "easy-to-use" user
         $user = new User();
         $user->setEmail('user@user.com');
         $user->setUsername('user');
@@ -110,6 +110,7 @@ class AppFixtures extends Fixture
         $manager->persist($user);
    
         // On rajoute quelques users pour avoir de la data
+        // Adding a few users to have some datas
                 
         $userList = [];
         for ($u = 1; $u <= 25; $u++) { 
@@ -127,6 +128,7 @@ class AppFixtures extends Fixture
         
          
             // On crée une liste de catégories pour les articles
+            // Creating a category list for articles
         $articleCategoryList = [];
 
         for ($ac = 1; $ac <= 25; $ac++) { 
@@ -139,6 +141,7 @@ class AppFixtures extends Fixture
         }
 
          // On crée une liste de catégories pour les stickers
+         // Creating a category list for stickers
          $stickerCategoryList = [];
 
          for ($g = 1; $g <=25; $g++) { 
@@ -152,6 +155,7 @@ class AppFixtures extends Fixture
 
 
           // On crée une liste d'items pour les stickers
+          // Creating an item list for stickers
          $stickerItemList = [];
 
          for ($g = 1; $g <=25; $g++) { 
@@ -194,17 +198,19 @@ class AppFixtures extends Fixture
 
 
            
-       // Création des stickers
+       // Création des stickers / Stickers making
        
            // on crée une entité
            $sticker = new Sticker();
            for ($sc = 1; $sc <= 25; $sc++) {
             $sticker = new Sticker(); // Créer un nouvel objet Sticker à chaque itération
+            // Creating a new sticker object for each iteration
         
             $randomStickerCategory = $stickerCategoryList[random_int(0, count($stickerCategoryList) - 1)];
             $sticker->setIsAbout($randomStickerCategory);
             
-            // AddContain est utlisé pour affiché les Objets avec la fonction ManyTomany 
+            // AddContain est utlisé pour affiché les Objets avec la relation ManyTomany 
+            // AddContain is used to display objects with the ManyToMany relation
             $randomStickerItem = $stickerItemList[random_int(1, count($stickerItemList)  - 1)];
             $sticker->addContain($randomStickerItem); 
 
