@@ -56,7 +56,7 @@ class UserController extends AbstractController
             // - giving it the method hashPassword, $user
             // - and clear password already stored in user
             $hashedPassword = $userPasswordHasher->hashPassword($user, $user->getPassword());
-
+    
             // On écrase le mot de passe en clair par le mot de passe haché
             // Dumping password and replace with hashed one
             $user->setPassword($hashedPassword);

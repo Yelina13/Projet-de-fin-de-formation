@@ -30,8 +30,8 @@ class Todolist
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolists")
-     * @Groups({"get_todolist"})
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="todolists", cascade={"persist"}))
+     * @Groups({"get_todolist", "get_new_todolist"})
      */
     private $make;
 
